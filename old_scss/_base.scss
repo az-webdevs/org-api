@@ -1,0 +1,121 @@
+html {
+  box-sizing: border-box;
+  color: $off-white;
+  font-family: Lato, 'Open Sans', Arial;
+  font-size: 11px;
+
+  @media screen and (min-width: 450px) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 780px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 900px) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: 975px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1050px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 1150px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    font-size: 17px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+.page {
+  background-color: $off-white;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid $base-color-primary;
+  color: $base-color-primary;
+}
+
+.logo {
+  font-family: 'Source Code Pro';
+  font-weight: 300;
+}
+
+.primary-header {
+  margin: 0 0 0.6em 0;
+  font: 2.2em 'Source Code Pro';
+  color: $base-color-secondary;
+}
+
+button {
+  font-size: 0.8em;
+  font-weight: 400;
+  border-radius: 8px;
+  padding: 0.5em 1.5em;
+  transition: all 0.2s;
+  background-color: $grey;
+  color: $off-white;
+  text-align: center;
+  border-bottom: none;
+
+  &.primary {
+    background-color: $base-color-secondary;
+
+    &:hover {
+      background-color: $dark-secondary;
+    }
+  }
+
+  &.danger {
+    background-color: $error;
+
+    &:hover {
+      background-color: $dark-error;
+    }
+  }
+
+  &:hover {
+    background-color: $dark-grey;
+  }
+}
+
+a.btn {
+  @extend button;
+  display: inline-block;
+}
+
+span.required {
+  color: $error;
+  font-family: Lato;
+}
+
+.profile-sample, .oops-image {
+  max-height: 200px;
+}
+
+input[readonly] {
+  color: #999;
+  background-color: #eee;
+  cursor: default;
+}

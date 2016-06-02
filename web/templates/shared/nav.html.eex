@@ -1,18 +1,21 @@
 <nav class="primary-nav">
-  <a href="/" class="primary-nav__home-icon">
-    <span class="logo">{az}</span> Web Developers
-  </a>
-  <%= if @current_user do %>
-    <span>
-      <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn" %>
-    </span>
-  <% else %>
-    <a class="btn primary" href="<%= page_path(@conn, :signin) %>">
-      Sign in
+  <div class="nav-wrapper">
+    <a href="/" class="primary-nav__home-icon">
+      <span class="logo">{az}</span> Web Developers
     </a>
-  <% end %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <%= if @current_user do %>
+      <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn" %></li>
+    <% else %>
+      <li>
+        <a class="waves-effect waves-light btn" href="<%= page_path(@conn, :signin) %>">
+          Sign in
+        </a>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 </nav>
-
 <%
 info = get_flash(@conn, :info)
 error = get_flash(@conn, :error)

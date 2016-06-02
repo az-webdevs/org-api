@@ -1,5 +1,8 @@
 <%= render Org.SharedView, "nav.html", assigns %>
-<div class="home-content">
+<div class="primary-logo">
+  <span>{a</span><span>z}</span>
+</div>
+<!-- <div class="home-content">
   <input type="radio" name="tabs" id="tab1" checked>
   <input type="radio" name="tabs" id="tab2">
   <input type="radio" name="tabs" id="tab3">
@@ -51,4 +54,4 @@
 
   <a class="github-fork-ribbon right-bottom" href="https://github.com/therealklanni/az-webdevs" title="Fork me on GitHub">Fork me on GitHub</a>
 
-</div>
+</div> -->

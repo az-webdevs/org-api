@@ -1,8 +1,6 @@
 @import 'normalize';
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400|Lato:300,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700);
+@import 'materialize/materialize';
 @import 'variables';
-@import 'github-fork-ribbon';
 @import 'base';
-@import 'layout';
-@import 'components';
-@import 'animations'
+@import 'start';
