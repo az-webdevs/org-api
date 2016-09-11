@@ -1,47 +1,49 @@
-<div class="primary-logo">
-  <span>{a</span><span>z}</span>
-</div>
-<%= render Org.SharedView, "nav.html", assigns %>
-<div class="home-content">
-  <div class="home-content__about-us">
-    <h1 class="primary-header">About Us</h1>
-    <p class="home-content__details">
-      <span class="logo">{az}</span> <span>Web Devs</span> is a Slack community
-       created by and for local web developers as a place for us to connect,
-       communicate, and collaborate.
-    </p>
-    <p class="home-content__details">
-      <span>Already a member?</span> Click the button below!
-    </p>
-    <p>
-      <a class="btn primary waves-effect waves-light modal-trigger"
-         href="https://az-webdevs.slack.com/messages">
-        Go to our slack page &raquo;
-      </a>
-    </p>
+<div class="primary-background">
+  <div class="primary-logo">
+    <span>{a</span><span>z}</span>
   </div>
-  <div class="home-content__join">
-    <h1 class="primary-header">Want to Join?</h1>
-    <p class="home-content__details">
-      There's just a couple of steps to go through in order for us to verify that
-      you are a developer.
-    </p>
-    <p class="home-content__details">
-      We look forward to seeing you there!
-    </p>
-    <p>
-      <a class="btn waves-effect waves-light"
-         href="<%= page_path(@conn, :signin) %>">
+  <%= render Org.SharedView, "nav.html", assigns %>
+  <div class="home-content">
+    <div class="home-content__about-us">
+      <h1 class="primary-header">About Us</h1>
+      <p class="home-content__details">
+        <span class="logo">{az}</span> <span>Web Devs</span> is a Slack community
+         created by and for local web developers as a place for us to connect,
+         communicate, and collaborate.
+      </p>
+      <p class="home-content__details">
+        <span>Already a member?</span> Click the button below!
+      </p>
+      <p>
+        <a class="btn primary waves-effect waves-light modal-trigger"
+           href="https://az-webdevs.slack.com/messages">
+          Go to our slack page &raquo;
+        </a>
+      </p>
+    </div>
+    <div class="home-content__join">
+      <h1 class="primary-header">Want to Join?</h1>
+      <p class="home-content__details">
+        There's just a couple of steps to go through in order for us to verify that
+        you are a developer.
+      </p>
+      <p class="home-content__details">
+        We look forward to seeing you there!
+      </p>
+      <p>
+        <a class="btn waves-effect waves-light"
+           href="<%= page_path(@conn, :signin) %>">
 
-        Sign up now &raquo;
-      </a>
-    </p>
+          Sign up now &raquo;
+        </a>
+      </p>
+    </div>
+
+    <a class="github-fork-ribbon right-bottom"
+       href="https://github.com/therealklanni/az-webdevs"
+       title="Fork me on GitHub">
+      Fork me on GitHub
+    </a>
+
   </div>
-
-  <a class="github-fork-ribbon right-bottom"
-     href="https://github.com/therealklanni/az-webdevs"
-     title="Fork me on GitHub">
-    Fork me on GitHub
-  </a>
-
 </div>

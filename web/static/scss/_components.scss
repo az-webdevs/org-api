@@ -23,9 +23,10 @@
 }
 
 // Navs
+
 .primary-nav {
   box-shadow: none;
-  padding: 0 3.5em;
+  padding: 0 3.5rem;
   background: transparent;
   font-size: 1.4rem;
 }
@@ -40,6 +41,16 @@
 
 .primary-nav__link {
   color: $secondary-color;
+}
+
+.secondary-background {
+  .primary-nav {
+    background: $primary-color;
+  }
+
+  .primary-nav__link {
+    color: $off-white;
+  }
 }
 
 // Groups
@@ -67,6 +78,21 @@
   > span {
     color: $secondary-color;
   }
+}
+
+// Signin page components
+
+.signin-content {
+
+}
+
+.signin-content__header {
+  color: $secondary-color;
+}
+
+.signin-content__detail {
+  font-size: 1.3em;
+  color: color("blue-grey", "lighten-1");
 }
 
 // Additional Github Fork Ribbon stylings
