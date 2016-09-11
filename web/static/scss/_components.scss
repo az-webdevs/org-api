@@ -1,0 +1,83 @@
+// Primary logo that sits in the middle of the page
+
+.primary-logo {
+  font-family: $alternate-font;
+  font-weight: 700;
+  font-size: 11rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  span:first-child {
+    background-image: url('/images/code.png');
+    background-position: 0% 7%;
+    background-size: 320%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  span:nth-child(2) {
+    color: $primary-color;
+  }
+}
+
+// Navs
+.primary-nav {
+  box-shadow: none;
+  padding: 0 3.5em;
+  background: transparent;
+  font-size: 1.4rem;
+}
+
+.primary-nav__home-icon {
+  font-size: 1em;
+
+  .logo {
+    font-size: 1.3em;
+  }
+}
+
+.primary-nav__link {
+  color: $secondary-color;
+}
+
+// Groups
+
+// Home page components
+
+.home-content__join, .home-content__about-us {
+  width: 22.5rem;
+}
+
+.home-content__join {
+  color: $secondary-color;
+  text-align: right;
+}
+
+.home-content__details {
+  @extend .flow-text;
+  font-size: 1.2em;
+
+  .logo {
+    font-weight: 400;
+    font-size: 1.1em;
+  }
+
+  > span {
+    color: $secondary-color;
+  }
+}
+
+// Additional Github Fork Ribbon stylings
+
+.github-fork-ribbon {
+  font-size: 0.8rem;
+  border-bottom: none;
+  z-index: 1;
+}
+
+.github-fork-ribbon:before, .github-fork-ribbon:after {
+  background-color: $secondary-color;
+  box-sizing: content-box;
+}

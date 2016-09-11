@@ -1,0 +1,38 @@
+// Page wrapper for all pages
+
+.page {
+  height: 100vh;
+  position: relative;
+  background:
+    linear-gradient(
+      to right,
+      $primary-color 50vw,
+      $off-white 50vw
+    );
+}
+
+// Home page
+
+.home-content {
+  padding: 0 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100% - 10rem);
+  width: 100vw;
+}
+
+// Signin page
+
+.signin-content {
+  padding: 0 3.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: calc(100% - 10rem);
+}
+
+// Apply page
+
+// Thanks page

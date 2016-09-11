@@ -1,13 +1,17 @@
 <nav class="primary-nav">
   <div class="nav-wrapper">
     <a href="/" class="primary-nav__home-icon">
-      <span class="logo">{az}</span> Web Developers
+      <span class="logo">{az}</span><span> Web Developers</span>
     </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul class="right primary-nav__list">
+      <li>
+        <a href="#" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
+          Meetups
+        </a>
+      </li>
     <%= if @current_user do %>
       <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn" %></li>
     <% else %>
-      <li>
         <a class="waves-effect waves-light btn" href="<%= page_path(@conn, :signin) %>">
           Sign in
         </a>

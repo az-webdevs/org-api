@@ -10,7 +10,8 @@ defmodule Org.PageController do
   end
 
   def signin(conn, _params) do
-    render(conn, "signin.html")
+    groups = Repo.all(from g in Group, preload: [:user])
+    render(conn, "signin.html", groups: groups)
   end
 
   def apply(conn, _params) do
