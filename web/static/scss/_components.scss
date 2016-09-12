@@ -80,19 +80,31 @@
   }
 }
 
-// Signin page components
+// Signin and Thanks page components
 
-.signin-content {
-
+.thanks-content {
+  text-align: center;
 }
 
-.signin-content__header {
+.signin-content__header, .thanks-content__header {
   color: $secondary-color;
 }
 
-.signin-content__detail {
+.signin-content__detail, .thanks-content__detail {
   font-size: 1.3em;
   color: color("blue-grey", "lighten-1");
+}
+
+// Apply page components
+
+.apply-form-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  > div {
+    width: 50%;
+  }
 }
 
 // Additional Github Fork Ribbon stylings

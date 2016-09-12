@@ -1,21 +1,23 @@
-<%= render Org.SharedView, "nav.html", assigns %>
-<div class="apply-content">
-  <div class="apply-header">
-      <h2 class="primary-header apply-header__header">Apply for Slack Access</h2>
-      <p class="apply-header__description">
-        Please fill out the form below. Your request to join Slack will be reviewed
-        as quickly as possible, and your invitation will be sent to the email
-        address below.
-      </p>
-      <div>
-        <span class="required">*</span>
-        <span>Provided by GitHub</span>
-      </div>
-  </div>
+<div class="primary-background">
+  <%= render Org.SharedView, "nav.html", assigns %>
+  <div class="apply-content">
+    <div class="apply-header">
+        <h2 class="primary-header apply-header__header">Apply for Slack Access</h2>
+        <p class="apply-header__description">
+          Please fill out the form below. Your request to join Slack will be reviewed
+          as quickly as possible, and your invitation will be sent to the email
+          address below.
+        </p>
+        <div>
+          <span class="required">*</span>
+          <span>Provided by GitHub</span>
+        </div>
+    </div>
 
-  <div class="apply-form-wrapper">
-    <%= render "form.html", changeset: @changeset,
-                            action: user_path(@conn, :apply, @user),
-                            user: @user %>
+    <div class="apply-form-wrapper">
+      <%= render "form.html", changeset: @changeset,
+                              action: user_path(@conn, :apply, @user),
+                              user: @user %>
+    </div>
   </div>
 </div>

@@ -1,12 +1,12 @@
 // Page wrapper for all pages
 
 .page {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
 .primary-background {
-  height: inherit;
+  height: 100vh;
   background:
     linear-gradient(
       to right,
@@ -16,7 +16,7 @@
 }
 
 .secondary-background {
-  height: inherit;
+  height: 100vh;
 }
 
 // Content placeholder
@@ -47,3 +47,9 @@
 // Apply page
 
 // Thanks page
+
+.thanks-content {
+  @extend %content;
+  flex-direction: column;
+  justify-content: space-between;
+}

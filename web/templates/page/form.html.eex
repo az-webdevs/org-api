@@ -7,7 +7,7 @@
 
   <div class="apply-form-fields">
     <div>
-      <p><%= label f, :name, class: "apply-form-fields__label" %><span class="required">*</span></p>
+      <p><%= label f, :name, class: "apply-form-fields__label" %><span class="required"> *</span></p>
       <div>
         <%= text_input f, :name, class: "apply-form-fields__input",
                                  placeholder: "Full Name",
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div>
-      <p><%= label f, :email, class: "apply-form-fields__label" %><span class="required">*</span></p>
+      <p><%= label f, :email, class: "apply-form-fields__label" %><span class="required"> *</span></p>
       <div>
         <%= text_input f, :email, class: "apply-form-fields__input",
                                   placeholder: "Email",
