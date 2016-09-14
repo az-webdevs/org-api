@@ -1,12 +1,11 @@
 // Page wrapper for all pages
 
 .page {
-  min-height: 100vh;
   position: relative;
 }
 
 .primary-background {
-  height: 100vh;
+  min-height: 100vh;
   background:
     linear-gradient(
       to right,
@@ -16,7 +15,8 @@
 }
 
 .secondary-background {
-  height: 100vh;
+  min-height: 100vh;
+  background-color: $off-white;
 }
 
 // Content placeholder
@@ -24,7 +24,7 @@
   padding: 0 3.5rem;
   display: flex;
   align-items: center;
-  min-height: calc(100% - 10rem);
+  min-height: calc(100vh - 10rem);
   width: 100vw;
 }
 
@@ -45,6 +45,11 @@
 }
 
 // Apply page
+
+.apply-content {
+  @extend %content;
+  display: block;
+}
 
 // Thanks page
 

@@ -104,6 +104,62 @@
 
   > div {
     width: 50%;
+    padding: 0 2em;
+  }
+
+  > div:nth-child(odd) {
+    label {
+      color: $off-white;
+    }
+    input {
+      color: $off-white;
+      border-bottom-color: $off-white;
+    }
+    ::-webkit-input-placeholder {
+      color: $secondary-color;
+    }
+  }
+}
+
+.apply-header {
+  width: 100%;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  > div {
+    width: 50%;
+    padding: 0 2em;
+  }
+}
+
+.apply-header__header {
+  margin : 0;
+}
+
+.apply-header__description {
+  color: $secondary-color;
+}
+
+.apply-form__button-wrapper {
+  padding: 4em;
+  text-align: center;
+}
+
+.apply-form__button {
+  padding: 0 5em;
+}
+
+.apply-form-fields .checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > label {
+    width: 50%;
   }
 }
 
