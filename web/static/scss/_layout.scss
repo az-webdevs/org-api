@@ -5,6 +5,7 @@
 }
 
 .primary-background {
+  position: relative;
   min-height: 100vh;
   background:
     linear-gradient(
@@ -15,6 +16,7 @@
 }
 
 .secondary-background {
+  position: relative;
   min-height: 100vh;
   background-color: $off-white;
   color: $secondary-color;
@@ -62,7 +64,7 @@
 
 // Any group page
 
-.groups {
+.vertical-page {
   @extend %content;
   flex-direction: column;
 }

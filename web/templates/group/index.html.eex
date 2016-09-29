@@ -1,10 +1,9 @@
-<!-- <ul class="collection groups">
+<ul class="collection groups">
 <%= for group <- @groups do %>
   <li class="collection-item avatar group-item">
     <img src="" alt="" class="circle">
     <span class="title group-item__title"><%= group.title %></span>
     <%= if @current_user && @current_user.role == "admin" do %>
-    <p class="group-item__added-by">Added by <%= group.user.name %></p>
     <% end %>
     <p class="group-item__description"><%= group.description %></p>
     <div class="group-item__actions">
@@ -23,24 +22,6 @@
 
 <%= if Enum.empty?(@groups) do %>
 <h2>No groups currently listed.</h2>
-<% end %>
-
-<%= if @current_user && @current_user.role == "admin" do %>
-  <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
-<% end %> -->
-
-<%= if Enum.empty?(@groups) do %>
-<!-- <h2>No groups currently listed.</h2> -->
-<ul class="groups">
-  <li class="groups-item">
-    <img class="groups-item__avatar" src="" alt="" />
-    <p class="groups-item__added-by"></p>
-    <p class="groups-item__description"></p>
-    <div class="groups-item__actions">
-      <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
-    </div>
-  </li>
-</ul>
 <% end %>
 
 <%= if @current_user && @current_user.role == "admin" do %>

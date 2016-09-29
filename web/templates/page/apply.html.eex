@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="apply-form-wrapper">
+    <div class="base-form apply-form-wrapper">
       <%= render "form.html", changeset: @changeset,
                               action: user_path(@conn, :apply, @user),
                               user: @user %>

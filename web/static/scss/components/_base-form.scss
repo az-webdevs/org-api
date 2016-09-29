@@ -1,0 +1,19 @@
+.base-form {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.base-form__label {
+  color: $secondary-color;
+  font-size: 1.2em;
+}
+
+.base-form__actions {
+  margin-top: 15px;
+}
+
+.primary-textarea {
+  outline: none;
+  padding: 1em;
+  min-height: 7em;
+}

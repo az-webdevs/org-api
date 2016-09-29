@@ -1,0 +1,21 @@
+.primary-logo {
+  font-family: $alternate-font;
+  font-weight: 700;
+  font-size: 11rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  span:first-child {
+    background-image: url('/images/code.png');
+    background-position: 0% 7%;
+    background-size: 320%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  span:nth-child(2) {
+    color: $primary-color;
+  }
+}

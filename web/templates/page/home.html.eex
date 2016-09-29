@@ -47,3 +47,4 @@
 
   </div>
 </div>
+<%= render Org.GroupView, "index.html", assigns %>

@@ -12,12 +12,17 @@ html {
   font: inherit;
 }
 
+// Non-home page logo
+
 .logo {
   font-family: $alternate-font;
   font-weight: 300;
 }
 
+// Primary header
+
 .primary-header {
+  color: $secondary-color;
   font-size: 2.5em;
   font-family: $alternate-font;
 }
@@ -25,6 +30,8 @@ html {
 .required {
   color: $error;
 }
+
+// Flash stylings
 
 %flash {
   position: absolute;

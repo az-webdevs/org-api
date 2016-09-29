@@ -1,0 +1,22 @@
+.home-content__join, .home-content__about-us {
+  width: 22.5rem;
+}
+
+.home-content__join {
+  color: $secondary-color;
+  text-align: right;
+}
+
+.home-content__details {
+  @extend .flow-text;
+  font-size: 1.2em;
+
+  .logo {
+    font-weight: 400;
+    font-size: 1.1em;
+  }
+
+  > span {
+    color: $secondary-color;
+  }
+}

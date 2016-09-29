@@ -7,7 +7,7 @@
 
   <div class="apply-form-fields">
     <div>
-      <p><%= label f, :name, class: "apply-form-fields__label" %><span class="required"> *</span></p>
+      <p><%= label f, :name, class: "base-form__label" %><span class="required"> *</span></p>
       <div>
         <%= text_input f, :name, class: "apply-form-fields__input",
                                  placeholder: "Full Name",
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div>
-      <p><%= label f, :email, class: "apply-form-fields__label" %><span class="required"> *</span></p>
+      <p><%= label f, :email, class: "base-form__label" %><span class="required"> *</span></p>
       <div>
         <%= text_input f, :email, class: "apply-form-fields__input",
                                   placeholder: "Email",
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div>
-      <p><%= label f, :company, class: "apply-form-fields__label" %></p>
+      <p><%= label f, :company, class: "base-form__label" %></p>
       <div>
         <%= text_input f, :company, class: "apply-form-fields__input",
                                     placeholder: "Where do you work?" %>
@@ -36,7 +36,7 @@
     </div>
     <div>
       <p>
-        <label for="languages" class="apply-form-fields__label">Languages</label>
+        <label for="languages" class="base-form__label">Languages</label>
         <p class="secondary-description"> Which (web) programming languages are you competent with?</p>
       </p>
       <div>
@@ -61,9 +61,9 @@
       </div>
     </div>
     <div>
-      <p><%= label f, :comments, class: "apply-form-fields__label" %></p>
+      <p><%= label f, :comments, class: "base-form__label" %></p>
       <div>
-        <%= textarea f, :comments, class: "apply-form-fields__comments",
+        <%= textarea f, :comments, class: "primary-textarea apply-form-fields__comments",
                                    placeholder: "Any additional information you would like to tell us about yourself.",
                                    rows: 4 %>
         <%= error_tag f, :comments %>
