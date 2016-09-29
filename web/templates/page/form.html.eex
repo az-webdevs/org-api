@@ -63,7 +63,7 @@
     <div>
       <p><%= label f, :comments, class: "apply-form-fields__label" %></p>
       <div>
-        <%= textarea f, :comments, class: "form-control",
+        <%= textarea f, :comments, class: "apply-form-fields__comments",
                                    placeholder: "Any additional information you would like to tell us about yourself.",
                                    rows: 4 %>
         <%= error_tag f, :comments %>
