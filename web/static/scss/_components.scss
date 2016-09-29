@@ -163,6 +163,26 @@
   }
 }
 
+// Groups
+
+.groups {
+  .primary-header {
+    color: $secondary-color;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  textarea {
+    height: 7em;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+}
+
 // Additional Github Fork Ribbon stylings
 
 .github-fork-ribbon {

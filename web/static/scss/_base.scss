@@ -23,5 +23,23 @@ html {
 }
 
 .required {
-  color: #FF0000;
+  color: $error;
+}
+
+%flash {
+  position: absolute;
+  display: block;
+  width: 100%;
+  padding: 2px 0;
+  text-align: center;
+}
+
+.flash--info {
+  @extend %flash;
+  background-color: $success;
+}
+
+.flash--error {
+  @extend %flash;
+  background-color: $error;
 }

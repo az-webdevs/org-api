@@ -17,6 +17,7 @@
 .secondary-background {
   min-height: 100vh;
   background-color: $off-white;
+  color: $secondary-color;
 }
 
 // Content placeholder
@@ -57,4 +58,11 @@
   @extend %content;
   flex-direction: column;
   justify-content: space-between;
+}
+
+// Any group page
+
+.groups {
+  @extend %content;
+  flex-direction: column;
 }

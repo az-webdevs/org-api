@@ -1,0 +1,23 @@
+<div class="secondary-background">
+  <%= render Org.SharedView, "nav.html", assigns %>
+  <div class="groups">
+    <h2 class="primary-header">New Group</h2>
+
+    <%= form_for @conn, group_path(@conn, :create), [as: :group], fn f -> %>
+      <div class="">
+        <%= label f, :title %>
+        <%= text_input f, :title, class: "" %>
+      </div>
+      <div class="">
+        <%= label f, :url %>
+        <%= text_input f, :url, class: "" %>
+      </div>
+      <div class="">
+        <%= label f, :description %>
+        <%= textarea f, :description, class: "" %>
+      </div>
+
+      <%= submit "Submit", class: "btn primary" %>
+    <% end %>
+  </div>
+</div>
