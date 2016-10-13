@@ -1,7 +1,7 @@
 <div class="secondary-background">
   <%= render Org.SharedView, "nav.html", assigns %>
 
-  <div class="vertical-page">
+  <div class="base-layout">
     <h2 class="primary-header">New Group</h2>
     <section class="base-form">
       <%= render "form.html", changeset: @changeset, action: group_path(@conn, :create) %>

@@ -3,7 +3,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   font-family: Roboto, 'Open Sans', Arial;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 *, *::before, *::after {
@@ -16,13 +16,13 @@ html {
 
 .logo {
   font-family: $alternate-font;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 // Primary header
 
 .primary-header {
-  color: $secondary-color;
+  color: $primary-color-dark;
   font-size: 2.5em;
   font-family: $alternate-font;
 }
@@ -49,4 +49,8 @@ html {
 .flash--error {
   @extend %flash;
   background-color: $error;
+}
+
+ul {
+  margin: 0;
 }

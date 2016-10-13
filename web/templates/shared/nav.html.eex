@@ -5,7 +5,7 @@
     </a>
     <ul class="right primary-nav__list">
       <li>
-        <a href="#" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
+        <a href="#groups" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
           Meetups
         </a>
       </li>

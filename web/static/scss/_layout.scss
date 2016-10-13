@@ -22,10 +22,10 @@
   color: $secondary-color;
 }
 
-// Content placeholder
-%content {
+.base-layout {
   padding: 0 3.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 10rem);
   width: 100vw;
@@ -34,37 +34,36 @@
 // Home page
 
 .home-content {
-  @extend %content;
+  @extend .base-layout;
   flex-direction: row;
   justify-content: space-between;
+
+  > div {
+    width: 22.5rem;
+  }
+
+  > div:nth-child(2) {
+    text-align: right;
+  }
 }
 
 // Signin page
 
 .signin-content {
-  @extend %content;
-  flex-direction: column;
+  @extend .base-layout;
   justify-content: space-between;
 }
 
 // Apply page
 
 .apply-content {
-  @extend %content;
+  @extend .base-layout;
   display: block;
 }
 
 // Thanks page
 
 .thanks-content {
-  @extend %content;
-  flex-direction: column;
+  @extend .base-layout;
   justify-content: space-between;
-}
-
-// Any group page
-
-.vertical-page {
-  @extend %content;
-  flex-direction: column;
 }

@@ -1,7 +1,7 @@
-<ul class="collection groups">
+<ul class="collection group-list">
 <%= for group <- @groups do %>
   <li class="collection-item avatar group-item">
-    <img src="" alt="" class="circle">
+    <img src="/images/az.jpg" alt="" class="circle">
     <span class="title group-item__title"><%= group.title %></span>
     <%= if @current_user && @current_user.role == "admin" do %>
     <% end %>

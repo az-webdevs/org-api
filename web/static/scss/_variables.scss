@@ -1,6 +1,11 @@
+// Variables not seen here can be found in materialize/components/_variables.scss
+
 $off-white: color("grey", "lighten-4");
-$off-black: color("grey", "darken-4");
-$secondary-color-light: color("blue-grey", "lighten-1")  ;
+
+$primary-text: color("grey", "darken-4");
+$secondary-text: color("grey", "darken-1");
+$divider-color: color("grey", "lighten-1");
+
 $success: rgb(105, 212, 119);
-$error: rgb(212, 91, 91);
+$error: $error-color;
 $alternate-font: 'Source Code Pro';

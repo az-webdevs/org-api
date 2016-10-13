@@ -47,4 +47,7 @@
 
   </div>
 </div>
-<%= render Org.GroupView, "index.html", assigns %>
+<div class="group-content" id="groups">
+  <h1 class="primary-header group-content__header">Meetups</h1>
+  <%= render Org.GroupView, "index.html", assigns %>
+</div>
