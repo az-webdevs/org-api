@@ -5,14 +5,14 @@
     </a>
     <ul class="right primary-nav__list">
       <li>
-        <a href="#groups" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
+        <a href="/#groups" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
           Meetups
         </a>
       </li>
     <%= if @current_user do %>
-      <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn" %></li>
+      <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn-large" %></li>
     <% else %>
-        <a class="waves-effect waves-light btn" href="<%= page_path(@conn, :signin) %>">
+        <a class="waves-effect waves-light btn-large" href="<%= page_path(@conn, :signin) %>">
           Sign in
         </a>
       </li>

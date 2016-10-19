@@ -15,7 +15,7 @@
         <span>Already a member?</span> Click the button below!
       </p>
       <p>
-        <a class="btn primary waves-effect waves-light modal-trigger"
+        <a class="btn-large primary waves-effect waves-light modal-trigger"
            href="https://az-webdevs.slack.com/messages">
           Go to our slack page &raquo;
         </a>
@@ -31,7 +31,7 @@
         We look forward to seeing you there!
       </p>
       <p>
-        <a class="btn waves-effect waves-light"
+        <a class="btn-large waves-effect waves-light"
            href="<%= page_path(@conn, :signin) %>">
 
           Sign up now &raquo;
