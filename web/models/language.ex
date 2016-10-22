@@ -6,8 +6,6 @@ defmodule Org.Language do
     field :title, :string
     # has_many :user, Org.User
     many_to_many :users, Org.User, join_through: "skills"
-
-    timestamps()
   end
 
   @doc """

@@ -1,13 +1,13 @@
 defmodule Org.Skill do
   use Org.Web, :model
 
-  alias Org.{Repo, User, Language}
+  alias Org
 
   @primary_key false
 
   schema "skills" do
-    belongs_to :users, User, primary_key: true
-    belongs_to :languages, Language, primary_key: true
+    belongs_to :users, Org.User, primary_key: true
+    belongs_to :languages, Org.Language, primary_key: true
 
     field :level, :integer, default: 1
   end
