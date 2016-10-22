@@ -11,6 +11,9 @@ config :logger, level: :warn
 
 # Configure your database
 config :org, Org.Repo,
-  adapter: Mongo.Ecto,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
   database: "org_test",
-  pool_size: 1
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

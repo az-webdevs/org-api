@@ -1,8 +1,8 @@
 <%= render Org.SharedView, "nav.html", assigns %>
 <div class="signin-content">
-  <h2 class="primary-header signin-content__header">
+  <h1 class="primary-header signin-content__header">
     Thanks for your interest in joining!
-  </h2>
+  </h1>
   <p class="signin-content__detail">
     To help prevent spam, we request that you sign in with GitHub to continue
   </p>

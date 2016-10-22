@@ -2,6 +2,8 @@ defmodule Org.AuthController do
   use Org.Web, :controller
 
   alias Org.User
+  alias Org.Language
+  alias Org.UserService
 
   @doc """
   This action is reached via `/auth/:provider` and redirects to the OAuth2 provider
@@ -35,7 +37,7 @@ defmodule Org.AuthController do
     conn
     |> put_session(:current_user, Map.get(user, :id))
     |> put_session(:access_token, token.access_token)
-    |> redirect(to: "/")
+    |> redirect(to: "/apply")
   end
 
   defp authorize_url!("github"),   do: GitHub.authorize_url!
@@ -69,11 +71,15 @@ defmodule Org.AuthController do
   end
 
   defp find_or_create_user(user) do
+    IO.inspect(user)
     case Repo.get_by(User, github_id: user[:github_id]) do
       nil  -> %User{} # User not found, we build one
       user -> user    # User exists, let's use it
     end
+    |> Repo.preload(:languages)
     |> User.changeset(user)
     |> Repo.insert_or_update!
+    # |> UserService.insert
+    # |> Repo.transaction
   end
 end
