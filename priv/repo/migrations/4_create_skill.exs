@@ -3,9 +3,9 @@ defmodule Org.Repo.Migrations.CreateSkill do
 
   def change do
     create table(:skills, primary_key: false) do
+      add :level, :integer, default: 1
       add :user_id, references(:users, on_delete: :nothing), primary_key: true
       add :language_id, references(:languages, on_delete: :nothing), primary_key: true
-      add :level, :integer
     end
 
     create index :skills, [:level]
