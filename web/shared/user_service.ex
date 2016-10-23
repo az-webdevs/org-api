@@ -16,8 +16,8 @@ defmodule Org.UserService do
         :not_found ->
           Enum.each solves, fn ({key, val}) ->
             language = Language.create_or_update! key
-            # user
-            # |> SkillService.solve(language, val)
+            user
+            |> SkillService.create_skills(language, val)
           end
       end
 

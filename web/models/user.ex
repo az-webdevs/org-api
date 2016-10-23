@@ -23,7 +23,6 @@ defmodule Org.User do
     field :has_applied, :boolean, default: false
     field :comments, :string
     has_many :groups, Org.Group
-    # has_many :languages, Org.Language
     many_to_many :languages, Org.Language, join_through: "skills"
 
     timestamps()

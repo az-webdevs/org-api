@@ -41,7 +41,7 @@
       </p>
       <div>
         <div class="checkbox">
-          <%= inputs_for f, :languages, fn g -> %>
+          <%= inputs_for f, @languages, fn g -> %>
             <%= checkbox g, :es5 %>
             <%= label g, :es5, "JavaScript (ES5)" %>
             <%= checkbox g, :es6 %>

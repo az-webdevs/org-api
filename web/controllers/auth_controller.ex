@@ -3,7 +3,7 @@ defmodule Org.AuthController do
 
   alias Org.User
   alias Org.Language
-  alias Org.UserService
+  alias Org.SkillService
 
   @doc """
   This action is reached via `/auth/:provider` and redirects to the OAuth2 provider
@@ -70,16 +70,25 @@ defmodule Org.AuthController do
     find_or_create_user(user)
   end
 
-  defp find_or_create_user(user) do
-    IO.inspect(user)
-    case Repo.get_by(User, github_id: user[:github_id]) do
-      nil  -> %User{} # User not found, we build one
-      user -> user    # User exists, let's use it
+  defp find_or_create_user(params) do
+    {operation, user} = case Repo.get_by(User, github_id: params[:github_id]) do
+      nil  -> {:created, %User{}} # User not found, we build one
+      user -> {:updated, user}    # User exists, let's use it
     end
+
+    case operation do
+      created ->
+        IO.inspect(params)
+        IO.inspect(user)
+        SkillService.create_user_skills(user)
+      updated ->
+        # temporary
+        SkillService.create_user_skills(user)
+    end
+
+    user
     |> Repo.preload(:languages)
-    |> User.changeset(user)
+    |> User.changeset(params)
     |> Repo.insert_or_update!
-    # |> UserService.insert
-    # |> Repo.transaction
   end
 end
