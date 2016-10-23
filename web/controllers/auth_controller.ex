@@ -71,23 +71,13 @@ defmodule Org.AuthController do
   end
 
   defp find_or_create_user(params) do
-    {operation, user} = case Repo.get_by(User, github_id: params[:github_id]) do
-      nil  -> {:created, %User{}} # User not found, we build one
-      user -> {:updated, user}    # User exists, let's use it
+    case Repo.get_by(User, github_id: params[:github_id]) do
+      # User not found, we build one
+      nil  -> struct(User, params)
+              |> SkillService.create_user_skills
+      # User exists, let's use it
+      user -> user
     end
-
-    case operation do
-      created ->
-        IO.inspect(params)
-        IO.inspect(user)
-        SkillService.create_user_skills(user)
-      updated ->
-        # temporary
-        SkillService.create_user_skills(user)
-    end
-
-    user
-    |> Repo.preload(:languages)
     |> User.changeset(params)
     |> Repo.insert_or_update!
   end
