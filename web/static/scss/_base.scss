@@ -28,7 +28,7 @@ html {
 }
 
 .required {
-  color: $error;
+  color: $secondary-color;
 }
 
 // Flash stylings
@@ -48,7 +48,12 @@ html {
 
 .flash--error {
   @extend %flash;
+  color: $off-black;
   background-color: $error;
+
+  .fa {
+    color: #FF0000;
+  }
 }
 
 ul {

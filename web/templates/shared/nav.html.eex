@@ -28,7 +28,7 @@ error = get_flash(@conn, :error)
 <% end %>
 <%= if error do %>
   <div>
-    <span class="flash--error"><%= error %></span>
+    <span class="flash--error"><i class="fa fa-exclamation-triangle"></i> <%= error %></span>
   </div>
 <% end %>
 </div>
