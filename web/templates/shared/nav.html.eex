@@ -1,23 +1,18 @@
 <nav class="primary-nav">
-  <div class="nav-wrapper">
-    <a href="/" class="primary-nav__home-icon">
-      <span class="logo">{az}</span><span> Web Developers</span>
+  <a href="/" class="primary-nav__home-icon">
+    <span class="logo">{az}</span><span> Web Developers</span>
+  </a>
+  <div class="primary-nav__list">
+    <a href="/#groups" class="primary-nav__link">
+      Meetups
     </a>
-    <ul class="right primary-nav__list">
-      <li>
-        <a href="/#groups" data-activates="slide-out" class="primary-nav__link meetup-sidenav">
-          Meetups
-        </a>
-      </li>
-    <%= if @current_user do %>
-      <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn-large" %></li>
-    <% else %>
-        <a class="waves-effect waves-light btn-large" href="<%= page_path(@conn, :signin) %>">
-          Sign in
-        </a>
-      </li>
-    <% end %>
-    </ul>
+  <%= if @current_user do %>
+    <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "waves-effect waves-light btn-large" %>
+  <% else %>
+    <a class="waves-effect waves-light btn-large" href="<%= page_path(@conn, :signin) %>">
+      Sign in
+    </a>
+  <% end %>
   </div>
 </nav>
 <%
