@@ -5,7 +5,7 @@
 
 .base-form__label {
   color: $primary-color-dark;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .base-form__actions {
@@ -16,4 +16,5 @@
   outline: none;
   padding: 1em;
   min-height: 7em;
+  border-radius: 2px;
 }

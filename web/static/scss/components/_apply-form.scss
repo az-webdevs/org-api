@@ -3,11 +3,13 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+  // Seperator divs
   > div {
     width: 50%;
     padding: 0 2em;
   }
 
+  // Needed for the alternating color scheme
   > div:nth-child(odd) {
     label {
       color: $off-white;
@@ -22,7 +24,16 @@
       color: $primary-color-dark;
     }
   }
+
+  .apply-form-fields__input, input:disabled, input[readonly="readonly"] {
+    border-width: 3px;
+  }
+
+  input:disabled, input[readonly="readonly"] {
+    color: $primary-text;
+  }
 }
+
 
 .apply-header {
   width: 100%;
@@ -72,10 +83,11 @@
   flex-wrap: wrap;
 
   > label {
+    color: $primary-text;
     width: 50%;
   }
 }
 
 .apply-form-fields__comments {
-  border-color: $off-white;
+  border: 3px solid $off-white;
 }
