@@ -6,67 +6,71 @@
   <% end %>
 
   <div class="apply-form-fields">
-    <div>
-      <p><%= label f, :name, class: "base-form__label" %><span class="required"> *</span></p>
+    <div class="apply-form-fields__column column-1">
       <div>
-        <%= text_input f, :name, class: "apply-form-fields__input",
-                                 placeholder: "Full Name",
-                                 readonly: "readonly",
-                                 required: "required" %>
-        <%= error_tag f, :name %>
+        <p><%= label f, :name, class: "base-form__label" %><span class="required"> *</span></p>
+        <div>
+          <%= text_input f, :name, class: "base-form__input",
+                                   placeholder: "Full Name",
+                                   readonly: "readonly",
+                                   required: "required" %>
+          <%= error_tag f, :name %>
+        </div>
       </div>
-    </div>
-    <div>
-      <p><%= label f, :email, class: "base-form__label" %><span class="required"> *</span></p>
       <div>
-        <%= text_input f, :email, class: "apply-form-fields__input",
-                                  placeholder: "Email",
-                                  readonly: "readonly",
-                                  required: "required" %>
-        <%= error_tag f, :email %>
+        <p><%= label f, :email, class: "base-form__label" %><span class="required"> *</span></p>
+        <div>
+          <%= text_input f, :email, class: "base-form__input",
+                                    placeholder: "Email",
+                                    readonly: "readonly",
+                                    required: "required" %>
+          <%= error_tag f, :email %>
+        </div>
       </div>
-    </div>
-    <div>
-      <p><%= label f, :company, class: "base-form__label" %></p>
       <div>
-        <%= text_input f, :company, class: "apply-form-fields__input",
-                                    placeholder: "Where do you work?" %>
-        <%= error_tag f, :company %>
-      </div>
-    </div>
-    <div>
-      <p>
-        <label for="languages" class="base-form__label">Languages</label>
-        <p class="secondary-description"> Which (web) programming languages are you competent with?</p>
-      </p>
-      <div>
-        <div class="checkbox">
-          <%= inputs_for f, :languages, fn g -> %>
-            <%= checkbox g, :es5 %>
-            <%= label g, :es5, "JavaScript (ES5)" %>
-            <%= checkbox g, :es6 %>
-            <%= label g, :es6, "JavaScript (ES6/ES2015)" %>
-            <%= checkbox g, :es7 %>
-            <%= label g, :es7, "JavaScript (ES7/ES2016)" %>
-            <%= checkbox g, :dotnet %>
-            <%= label g, :dotnet, ".NET" %>
-            <%= checkbox g, :python %>
-            <%= label g, :python, "Python" %>
-            <%= checkbox g, :rails %>
-            <%= label g, :rails, "Ruby on Rails" %>
-            <%= checkbox g, :php %>
-            <%= label g, :php, "PHP" %>
-          <% end %>
+        <p><%= label f, :company, class: "base-form__label" %></p>
+        <div>
+          <%= text_input f, :company, class: "base-form__input",
+                                      placeholder: "Where do you work?" %>
+          <%= error_tag f, :company %>
         </div>
       </div>
     </div>
-    <div>
-      <p><%= label f, :comments, class: "base-form__label" %></p>
+    <div class="apply-form-fields__column column-2">
       <div>
-        <%= textarea f, :comments, class: "primary-textarea apply-form-fields__comments",
-                                   placeholder: "Any additional information you would like to tell us about yourself.",
-                                   rows: 4 %>
-        <%= error_tag f, :comments %>
+        <p>
+          <label for="languages" class="base-form__label">Languages</label>
+          <p class="secondary-description"> Which (web) programming languages are you competent with?</p>
+        </p>
+        <div>
+          <div class="checkbox">
+            <%= inputs_for f, :languages, fn g -> %>
+              <%= checkbox g, :es5 %>
+              <%= label g, :es5, "JavaScript (ES5)" %>
+              <%= checkbox g, :es6 %>
+              <%= label g, :es6, "JavaScript (ES6/ES2015)" %>
+              <%= checkbox g, :es7 %>
+              <%= label g, :es7, "JavaScript (ES7/ES2016)" %>
+              <%= checkbox g, :dotnet %>
+              <%= label g, :dotnet, ".NET" %>
+              <%= checkbox g, :python %>
+              <%= label g, :python, "Python" %>
+              <%= checkbox g, :rails %>
+              <%= label g, :rails, "Ruby on Rails" %>
+              <%= checkbox g, :php %>
+              <%= label g, :php, "PHP" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p><%= label f, :comments, class: "base-form__label" %></p>
+        <div>
+          <%= textarea f, :comments, class: "primary-textarea apply-form-fields__comments",
+                                     placeholder: "Any additional information you would like to tell us about yourself.",
+                                     rows: 4 %>
+          <%= error_tag f, :comments %>
+        </div>
       </div>
     </div>
   </div>

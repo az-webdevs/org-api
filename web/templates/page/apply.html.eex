@@ -1,4 +1,4 @@
-<div class="primary-background">
+<div class="split-background">
   <%= render Org.SharedView, "nav.html", assigns %>
   <div class="apply-content">
     <div class="apply-header">

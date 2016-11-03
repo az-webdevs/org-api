@@ -7,19 +7,18 @@
 .primary-background {
   position: relative;
   min-height: 100vh;
+  background-color: $primary-color;
+}
+
+.split-background {
+  position: relative;
+  min-height: 100vh;
   background:
     linear-gradient(
       to right,
       $primary-color 50vw,
       $off-white 50vw
     );
-}
-
-.secondary-background {
-  position: relative;
-  min-height: 100vh;
-  background-color: $off-white;
-  color: $secondary-color;
 }
 
 .base-layout {

@@ -1,62 +1,52 @@
 .apply-form-fields {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 
-  // Seperator divs
-  > div {
-    width: 50%;
-    padding: 0 2em;
+  .secondary-description {
+    color: $primary-text;
   }
 
-  // Needed for the alternating color scheme
-  > div:nth-child(odd) {
+  .column-2 {
     label {
-      color: $off-white;
+      color: $primary-color-dark;
     }
 
     input {
-      color: $off-white;
-      border-bottom-color: $off-white;
+      color: $primary-text;
+      border-bottom-color: $primary-color-dark;
     }
 
     ::-webkit-input-placeholder {
-      color: $primary-color-dark;
+      color: $faded-text;
     }
-  }
-
-  .apply-form-fields__input, input:disabled, input[readonly="readonly"] {
-    border-width: 3px;
-  }
-
-  input:disabled, input[readonly="readonly"] {
-    color: $primary-text;
   }
 }
 
+.apply-form-fields__column {
+  width: 50%;
+  padding: 0 2em;
+}
 
 .apply-header {
   width: 100%;
-  font-size: 1.1em;
-  padding: 2em 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+  padding: 2em 2em 1em 2em;
 
-  > div {
-    width: 50%;
-    padding: 0 2em;
+  .logo {
+    color: $primary-color-dark;
+    font-size: 5em;
   }
 }
 
 .apply-header__header {
+  font-size: 2.8em;
   color: $off-white;
   margin : 0;
 }
 
 .apply-header__description {
-  color: $primary-color-dark;
+  color: $primary-color-light;
+  padding: 1em 0;
+  width: 40%;
 
   > p {
     margin: 0;
@@ -89,5 +79,6 @@
 }
 
 .apply-form-fields__comments {
-  border: 3px solid $off-white;
+  color: $primary-text;
+  border: 2px solid $primary-color-dark;
 }

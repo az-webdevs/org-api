@@ -1,5 +1,9 @@
 .home-content__join {
-  color: $primary-color-dark;
+  color: $secondary-text;
+
+  .primary-header {
+    color: $secondary-color;
+  }
 }
 
 .home-content__details {
