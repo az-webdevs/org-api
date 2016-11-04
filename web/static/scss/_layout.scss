@@ -30,6 +30,14 @@
   width: 100vw;
 }
 
+%centered-layout {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // Home page
 
 .home-content {
@@ -49,8 +57,7 @@
 // Signin page
 
 .signin-content {
-  @extend .base-layout;
-  justify-content: space-between;
+  @extend %centered-layout;
 }
 
 // Apply page
@@ -63,6 +70,5 @@
 // Thanks page
 
 .thanks-content {
-  @extend .base-layout;
-  justify-content: space-between;
+  @extend %centered-layout;
 }

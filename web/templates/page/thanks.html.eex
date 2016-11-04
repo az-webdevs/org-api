@@ -1,4 +1,4 @@
-<div class="secondary-background">
+<div class="primary-background">
   <%= render Org.SharedView, "nav.html", assigns %>
   <div>
     <div class="thanks-content">
