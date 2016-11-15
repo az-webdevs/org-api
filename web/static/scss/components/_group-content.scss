@@ -1,10 +1,11 @@
 .group-content {
-  background-color: $secondary-color;
+  background-color: $primary-color-dark;
+  padding: 3rem 10rem;
 }
 
 .group-content__header {
   color: $off-white;
   text-align: center;
-  padding: 3rem;
+  padding-bottom: 3rem;
   margin: 0;
 }
