@@ -42,20 +42,7 @@
       <div>
         <div class="checkbox">
           <%= inputs_for f, @languages, fn g -> %>
-            <%= checkbox g, :es5 %>
-            <%= label g, :es5, "JavaScript (ES5)" %>
-            <%= checkbox g, :es6 %>
-            <%= label g, :es6, "JavaScript (ES6/ES2015)" %>
-            <%= checkbox g, :es7 %>
-            <%= label g, :es7, "JavaScript (ES7/ES2016)" %>
-            <%= checkbox g, :dotnet %>
-            <%= label g, :dotnet, ".NET" %>
-            <%= checkbox g, :python %>
-            <%= label g, :python, "Python" %>
-            <%= checkbox g, :rails %>
-            <%= label g, :rails, "Ruby on Rails" %>
-            <%= checkbox g, :php %>
-            <%= label g, :php, "PHP" %>
+            <%= label g, :name %>
           <% end %>
         </div>
       </div>

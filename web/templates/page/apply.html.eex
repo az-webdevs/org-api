@@ -14,7 +14,7 @@
   </div>
 
   <div class="apply-form-wrapper">
-    <%= render "form.html", changeset: @changeset,
+    <%= render "form.html", changeset: @changeset, languages: @languages,
                             action: user_path(@conn, :apply, @user),
                             user: @user %>
   </div>

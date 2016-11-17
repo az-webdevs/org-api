@@ -3,6 +3,7 @@ defmodule Org.PageController do
 
   alias Org.Group
   alias Org.User
+  alias Org.Language
 
   def home(conn, _params) do
     groups = Repo.all(from g in Group, preload: :user)
@@ -19,11 +20,23 @@ defmodule Org.PageController do
   end
 
   def apply(conn, _params) do
-    IO.puts "ping"
     user = Repo.get!(User, conn.assigns.current_user.id)
     |> Repo.preload(:languages)
     changeset = User.changeset(user)
-    render(conn, "apply.html", user: user, changeset: changeset)
+    languages = Repo.all(from l in Language) |> list_languages
+    render(conn, "apply.html", user: user, changeset: changeset, languages: languages)
+  end
+
+  defp list_languages(languages) do
+    Enum.flat_map(languages, fn(lang) ->
+      [
+        lang
+          |> Map.from_struct
+          |> Map.take([:id, :name, :title])
+          |> Map.values
+      ]
+    end)
+    |> IO.inspect
   end
 
   def thanks(conn, _params) do
