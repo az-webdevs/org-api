@@ -3,10 +3,9 @@
 /db
 /deps
 /*.ez
-/mongodb
 /logs
 
-# Generate on crash by the VM
+# Generated on crash by the VM
 erl_crash.dump
 
 # Static artifacts

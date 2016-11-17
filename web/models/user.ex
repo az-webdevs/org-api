@@ -10,9 +10,9 @@ defmodule Org.User do
     field :email, :string
     field :followers, :integer
     field :following, :integer
-    field :github_id, :integer
     field :hireable, :boolean, default: false
     field :html_url, :string
+    field :github_id, :integer
     field :location, :string
     field :login, :string
     field :name, :string
@@ -20,30 +20,21 @@ defmodule Org.User do
     field :public_repos, :integer
     field :role, :string, default: "user"
     field :type, :string
-
-    has_many :groups, Org.Group
-
-    # Application details
     field :has_applied, :boolean, default: false
     field :comments, :string
-    embeds_one :languages, Org.Language
+    has_many :groups, Org.Group
+    many_to_many :languages, Org.Language, join_through: "skills"
 
-    timestamps
+    timestamps()
   end
 
-  @required_fields ~w(avatar created_at email followers following html_url github_id login name
-                      public_gists public_repos role type)
-  @optional_fields ~w(bio blog company hireable location has_applied comments languages)
-
   @doc """
-  Creates a changeset based on the `model` and `params`.
-
-  If no params are provided, an invalid changeset is returned
-  with no validation performed.
+  Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(model, params \\ :empty) do
-    model
-    |> cast(params, @required_fields, @optional_fields)
+  def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:avatar, :bio, :blog, :company, :created_at, :email, :followers, :following, :hireable, :html_url, :github_id, :location, :login, :name, :public_gists, :public_repos, :role, :type, :has_applied, :comments])
+    |> validate_required([:avatar, :blog, :company, :created_at, :email, :followers, :following, :html_url, :github_id, :location, :login, :name, :public_gists, :public_repos, :role, :type, :has_applied])
     |> unique_constraint(:github_id)
   end
 end
