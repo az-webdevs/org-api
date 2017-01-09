@@ -8,14 +8,7 @@ nav .nav-wrapper i {
   line-height: .75em;
 }
 
-
-
-.collection .collection-item.avatar {
-
-  padding-left: 95px;
-
-  img.circle {
-    width: 70px;
-    height: 70px;
-  }
+// Avoid permanent uppercase
+.btn {
+  text-transform: initial;
 }
