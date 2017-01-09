@@ -1,16 +1,45 @@
-<ul class="collection group-list">
+<%= if Enum.empty?(@groups) do %>
+<h2>No groups currently listed.</h2>
+<% end %>
+
+<%= if @current_user && @current_user.role == "admin" do %>
+  <div class="group-content__new">
+    <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
+  </div>
+<% end %>
+
+<div class="card-list">
+  <%= for group <- @groups do %>
+  <div class="card">
+    <div class="card__media">
+      <div class="card__image" style="background-image: url(/images/az.jpg)"></div>
+    </div>
+    <div class="card__content">
+      <h6 class="card__title"><div class="center-text"><%= group.title %></div></h6>
+      <p class="card__description"><%= group.description %></p>
+    </div>
+    <div class="card__actions">
+      <a class="button" href="<%= group.url %>">View Details &raquo;</a>
+      <%= if @current_user && @current_user.role == "admin" do %>
+        <%= link "Edit", to: group_path(@conn, :edit, group), class: "button info" %>
+        <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "button danger" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<!--<ul class="primary-list">
 <%= for group <- @groups do %>
-  <li class="collection-item avatar group-item">
+  <li class="avatar primary-list-item">
     <img src="/images/az.jpg" alt="" class="circle">
-    <span class="title group-item__title"><%= group.title %></span>
+    <span class="title primary-list-item__title"><%= group.title %></span>
     <%= if @current_user && @current_user.role == "admin" do %>
     <% end %>
-    <p class="group-item__description"><%= group.description %></p>
-    <div class="group-item__actions">
-      <a class="btn" href="<%= group.url %>">View details &raquo;</a>
+    <p class="primary-list-item__description"><%= group.description %></p>
+    <div class="primary-list-item__actions">
+      <a class="btn" href="<%= group.url %>">View details &raquo;</div>
       <%= if @current_user && @current_user.role == "admin" do %>
-      <%= link "Show", to: group_path(@conn, :show, group), class: "btn" %>
-      <%= link "Edit", to: group_path(@conn, :edit, group), class: "btn" %>
+      <%= link "Edit", to: group_path(@conn, :edit, group), class: "btn info" %>
       <div class="phoenix-button-form">
         <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
       </div>
@@ -18,12 +47,4 @@
     </div>
   </li>
 <% end %>
-</ul>
-
-<%= if Enum.empty?(@groups) do %>
-<h2>No groups currently listed.</h2>
-<% end %>
-
-<%= if @current_user && @current_user.role == "admin" do %>
-  <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
-<% end %>
+</ul>-->

@@ -1,61 +1,62 @@
-<%= render Org.SharedView, "nav.html", assigns %>
+<div class="primary-background">
+  <%= render Org.SharedView, "nav.html", assigns %>
 
-<header>
-  <h2>
-    Listing
-    <%= if @current_user.role == "admin" do %>all<% end %>
-    <%= if @current_user.role == "member" do %>
-    members<% else %>users<% end %>
-  </h2>
-</header>
+  <header>
+    <h2>
+      Listing
+      <%= if @current_user.role == "admin" do %>all<% end %>
+      <%= if @current_user.role == "member" do %>
+      members<% else %>users<% end %>
+    </h2>
+  </header>
 
-<section class="card-list">
-  <%= for user <- @users do %>
-    <article class="card">
-      <aside class="card__media">
-        <figure class="card__figure" style="background-image: url(<%= user.avatar %>)">
-          <figcaption class="card__caption">
-            <h4>
-              <a href="<%= user.html_url %>" title="View <%= user.name %>'s GitHub profile">
-                <%= user.name %> (@<%= user.login %>)
-              </a>
-            </h4>
-            <%= cond do %>
-              <% @current_user.role == "admin" -> %>
-                <h6>Role: <%= @user.role %></h6>
-              <% @user.role == "admin" -> %>
-                <h6>(Admin)</h6>
+  <section class="card-list">
+    <%= for user <- @users do %>
+      <article class="card">
+        <aside class="card__media">
+          <figure class="card__figure" style="background-image: url(<%= user.avatar %>)">
+            <figcaption class="card__caption">
+              <h4>
+                <a href="<%= user.html_url %>" title="View <%= user.name %>'s GitHub profile">
+                  <%= user.name %> (@<%= user.login %>)
+                </a>
+              </h4>
+              <%= cond do %>
+                <% @current_user.role == "admin" -> %>
+                  <h6>Role: <%= user.role %></h6>
+                <% @user.role == "admin" -> %>
+                  <h6>(Admin)</h6>
+              <% end %>
+            </figcaption>
+          </figure>
+        </aside>
+        <section class="card__content">
+          <header class="card__header">
+            <h5><%= user.location %> | <%= user.company %></h5>
+            <%= if user.blog do %>
+            <h6><a href="<%= user.blog %>" title="<%= user.name %>'s website">Visit Website</a></h6>
             <% end %>
-          </figcaption>
-        </figure>
-      </aside>
-      <section class="card__content">
-        <header class="card__header">
-          <h5><%= user.location %> | <%= user.company %></h5>
-          <%= if user.blog do %>
-          <h6><a href="<%= user.blog %>" title="<%= user.name %>'s website">Visit Website</a></h6>
-          <% end %>
-          <h6>Following: <%= user.following %></h6>
-          <h6>Followers: <%= user.followers %></h6>
-          <h6>Repos: <%= user.public_repos %></h6>
-          <h6>Gists: <%= user.public_gists %></h6>
-        </header>
-        <section class="card__detail">
-          <p><%= user.bio %></p>
+            <h6>Following: <%= user.following %></h6>
+            <h6>Followers: <%= user.followers %></h6>
+            <h6>Repos: <%= user.public_repos %></h6>
+            <h6>Gists: <%= user.public_gists %></h6>
+          </header>
+          <section class="card__detail">
+            <p><%= user.bio %></p>
+          </section>
+          <footer class="card__actions">
+            <td class="text-right">
+              <%= link "Show", to: user_path(@conn, :show, user), class: "btn" %>
+              <%= if @current_user.role == "admin" do %>
+              <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn" %>
+              <div class="phoenix-button-form">
+                <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
+              </div>
+              <% end %>
+            </td>
+          </footer>
         </section>
-        <footer class="card__actions">
-          <td class="text-right">
-            <%= link "Show", to: user_path(@conn, :show, user), class: "btn" %>
-            <%= if @current_user.role == "admin" do %>
-            <%= link "Show Groups", to: user_path(@conn, :edit, user), class: "btn" %>
-            <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn" %>
-            <div class="phoenix-button-form">
-              <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
-            </div>
-            <% end %>
-          </td>
-        </footer>
-      </section>
-    </article>
-  <% end %>
-</section>
+      </article>
+    <% end %>
+  </section>
+</div>
