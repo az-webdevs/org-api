@@ -1,12 +1,13 @@
 // Variables not seen here can be found in materialize/components/_variables.scss
 
 $off-white: color("grey", "lighten-5");
-$primary-color-light: #B2EBF2;
+$primary-color-light: lighten($primary-color, 40%);
 
 $primary-text: rgba(color("grey", "darken-4"), 0.77);
 $secondary-text: color("grey", "darken-1");
 $divider-color: color("grey", "lighten-1");
 
+$light-grey: color("grey", "lighten-4");
 $faded-text: rgba($primary-text, 0.54);
 
 $success: rgb(105, 212, 119);
