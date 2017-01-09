@@ -5,19 +5,19 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
+  <div>
+    <%= label f, :name, class: "base-form__label" %>
+    <%= text_input f, :name, class: "base-form__input" %>
     <%= error_tag f, :name %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :email, class: "control-label" %>
-    <%= text_input f, :email, class: "form-control" %>
+  <div>
+    <%= label f, :email, class: "base-form__label" %>
+    <%= text_input f, :email, class: "base-form__input" %>
     <%= error_tag f, :email %>
   </div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn primary" %>
+  <div class="base-form__actions">
+    <%= submit "Submit", class: "btn-large primary" %>
   </div>
 <% end %>
