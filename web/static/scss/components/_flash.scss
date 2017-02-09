@@ -1,0 +1,25 @@
+// Flash stylings
+
+.flash {
+  position: absolute;
+  display: block;
+  width: 100%;
+  padding: 2px 0;
+  text-align: center;
+
+  // .flash--info
+  &--info {
+    background-color: $success;
+  }
+
+  // .flash--error
+  &--error {
+    color: $off-black;
+    background-color: $error;
+
+    // .flash-error .fa
+    .fa {
+      color: #FF0000;
+    }
+  }
+}

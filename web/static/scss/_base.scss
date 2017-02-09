@@ -31,31 +31,6 @@ html {
   color: $secondary-color;
 }
 
-// Flash stylings
-
-%flash {
-  position: absolute;
-  display: block;
-  width: 100%;
-  padding: 2px 0;
-  text-align: center;
-}
-
-.flash--info {
-  @extend %flash;
-  background-color: $success;
-}
-
-.flash--error {
-  @extend %flash;
-  color: $off-black;
-  background-color: $error;
-
-  .fa {
-    color: #FF0000;
-  }
-}
-
 ul {
   margin: 0;
 }

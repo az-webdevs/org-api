@@ -20,15 +20,9 @@ info = get_flash(@conn, :info)
 error = get_flash(@conn, :error)
 %>
 
-<div class="flash">
 <%= if info do %>
-  <div>
-    <span class="flash--info"><%= info %></span>
-  </div>
+  <span class="flash flash--info"><%= info %></span>
 <% end %>
 <%= if error do %>
-  <div>
-    <span class="flash--error"><i class="fa fa-exclamation-triangle"></i> <%= error %></span>
-  </div>
+  <span class="flash flash--error"><i class="fa fa-exclamation-triangle"></i> <%= error %></span>
 <% end %>
-</div>
