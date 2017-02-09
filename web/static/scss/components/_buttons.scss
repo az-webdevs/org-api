@@ -1,33 +1,46 @@
 // Base button classes
 
-// .btn is from materialize, .button is for flat, fill width use cases
-
 .button {
-  color: $off-white;
-  display: block;
   background-color: $secondary-color;
-  padding: 1em 0;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
+  color: $off-white;
+  display: inline-block;
+  padding: 1em 2em;
   text-align: center;
+  transition: .2s ease-out;
 
   .fa {
     color: $off-white;
   }
+
+  &:hover {
+    background-color: lighten($secondary-color, 5%);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+  }
 }
 
-.btn.success, .button.success {
+.button--flat {
+  border-radius: 0px;
+  display: block;
+  padding: 1em 0;
+}
+
+.button--success {
   background-color: $success;
 }
 
-.btn.info, .button.info {
+.button--info {
   background-color: $primary-color;
 }
 
-.btn.danger, .button.danger {
+.button--danger {
   color: $faded-text;
   background-color: $error;
 }
 
-.btn-icon {
+.button__icon {
   position: relative;
 
   .fa {

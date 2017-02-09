@@ -46,11 +46,11 @@
           </section>
           <footer class="card__actions">
             <td class="text-right">
-              <%= link "Show", to: user_path(@conn, :show, user), class: "btn" %>
+              <%= link "Show", to: user_path(@conn, :show, user), class: "button" %>
               <%= if @current_user.role == "admin" do %>
-              <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn" %>
+              <%= link "Edit", to: user_path(@conn, :edit, user), class: "button" %>
               <div class="phoenix-button-form">
-                <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
+                <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "button button--danger" %>
               </div>
               <% end %>
             </td>

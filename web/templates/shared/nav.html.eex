@@ -7,9 +7,9 @@
       Meetups
     </a>
   <%= if @current_user do %>
-    <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "waves-effect waves-light btn-large" %>
+    <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "button" %>
   <% else %>
-    <a class="waves-effect waves-light btn-large" href="<%= page_path(@conn, :signin) %>">
+    <a class="button" href="<%= page_path(@conn, :signin) %>">
       Sign in
     </a>
   <% end %>

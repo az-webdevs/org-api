@@ -9,12 +9,16 @@
 .home-content__details {
   font-size: 1.2em;
 
-  .logo {
-    font-weight: 400;
-    font-size: 1.1em;
-  }
-
   > span {
     color: $primary-color-dark;
   }
+}
+
+.home-content__details-logo {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.home-content__button {
+ font-size: 1.05em;
 }

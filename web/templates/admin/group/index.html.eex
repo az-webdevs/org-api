@@ -18,9 +18,9 @@
       <td><%= group.description %></td>
 
       <td class="text-right">
-        <%= link "Show", to: group_path(@conn, :show, group), class: "btn" %>
-        <%= link "Edit", to: group_path(@conn, :edit, group), class: "btn" %>
-        <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
+        <%= link "Show", to: group_path(@conn, :show, group), class: "button" %>
+        <%= link "Edit", to: group_path(@conn, :edit, group), class: "button" %>
+        <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "button button--danger" %>
       </td>
     </tr>
 <% end %>

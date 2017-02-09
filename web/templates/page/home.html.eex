@@ -7,15 +7,15 @@
     <div class="home-content__about-us">
       <h1 class="primary-header">About Us</h1>
       <p class="home-content__details">
-        <span class="logo">{az}</span> <span>Web Devs</span> is a Slack community
-         created by and for local web developers as a place for us to connect,
-         communicate, and collaborate.
+        <span class="logo home-content__details-logo">{az}</span> <span>Web Devs</span>
+        is a Slack community created by and for local web developers as a place
+        for us to connect, communicate, and collaborate.
       </p>
       <p class="home-content__details">
         <span>Already a member?</span> Click the button below!
       </p>
       <p>
-        <a class="btn-large primary waves-effect waves-light modal-trigger"
+        <a class="button home-content__button"
            href="https://az-webdevs.slack.com/messages">
           Go to our Slack page &raquo;
         </a>
@@ -31,7 +31,7 @@
         We look forward to seeing you there!
       </p>
       <p>
-        <a class="btn-large waves-effect waves-light"
+        <a class="button home-content__button"
            href="<%= page_path(@conn, :signin) %>">
 
           Sign up now &raquo;

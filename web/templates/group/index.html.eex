@@ -4,7 +4,7 @@
 
 <%= if @current_user && @current_user.role == "admin" do %>
   <div class="group-content__new">
-    <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
+    <%= link "New group", to: group_path(@conn, :new), class: "button" %>
   </div>
 <% end %>
 
@@ -19,10 +19,11 @@
       <p class="card__description"><%= group.description %></p>
     </div>
     <div class="card__actions">
-      <a class="button" href="<%= group.url %>">View Details &raquo;</a>
+      <a class="button button--flat" href="<%= group.url %>">View Details &raquo;</a>
       <%= if @current_user && @current_user.role == "admin" do %>
-        <%= link "Edit", to: group_path(@conn, :edit, group), class: "button info" %>
-        <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "button danger" %>
+        <%= link "Edit", to: group_path(@conn, :edit, group), class: "button button--flat button--info" %>
+        <%= link "Delete", to: group_path(@conn, :delete, group),
+         method: :delete, data: [confirm: "Are you sure?"], class: "button button--flat button--danger" %>
       <% end %>
     </div>
   </div>

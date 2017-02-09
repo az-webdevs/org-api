@@ -7,7 +7,7 @@
     <p class="signin-content__detail">
       To help prevent spam, we request that you sign in with GitHub to continue
     </p>
-    <a class="btn-large" href="<%= auth_path(@conn, :index, "github") %>">
+    <a class="button signin-content__auth-button" href="<%= auth_path(@conn, :index, "github") %>">
       <i class="fa fa-lg fa-github"></i> Authorize
     </a>
     <p class="signin-content__detail">
