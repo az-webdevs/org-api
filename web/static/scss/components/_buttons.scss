@@ -25,19 +25,36 @@
   border-radius: 0px;
   display: block;
   padding: 1em 0;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 .button--success {
   background-color: $success;
+
+  &:hover {
+    background-color: lighten($success, 5%);
+  }
 }
 
 .button--info {
   background-color: $primary-color;
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
 }
 
 .button--danger {
   color: $faded-text;
   background-color: $error;
+
+  &:hover {
+    background-color: lighten($error, 5%);
+  }
 }
 
 .button__icon {
