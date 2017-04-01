@@ -4,7 +4,7 @@ defmodule Org.ConnCase do
   tests that require setting up a connection.
 
   Such tests rely on `Phoenix.ConnTest` and also
-  imports other functionality to make it easier
+  import other functionality to make it easier
   to build and query models.
 
   Finally, if the test case interacts with the database,
@@ -23,7 +23,7 @@ defmodule Org.ConnCase do
       alias Org.Repo
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import Org.Router.Helpers
 
@@ -33,10 +33,12 @@ defmodule Org.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Org.Repo)
+
     unless tags[:async] do
-      Mongo.Ecto.truncate(Org.Repo, [])
+     Ecto.Adapters.SQL.Sandbox.mode(Org.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end
