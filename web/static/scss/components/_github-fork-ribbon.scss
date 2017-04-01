@@ -1,0 +1,13 @@
+// Overridden styles
+
+.github-fork-ribbon {
+  position: fixed;
+  font-size: 0.8rem;
+  border-bottom: none;
+  z-index: 1;
+}
+
+.github-fork-ribbon:before, .github-fork-ribbon:after {
+  background-color: $primary-color-dark;
+  box-sizing: content-box;
+}

@@ -1,16 +1,18 @@
-<%= render Org.SharedView, "nav.html", assigns %>
-<div class="signin-content">
-  <h2 class="primary-header signin-content__header">
-    Thanks for your interest in joining!
-  </h2>
-  <p class="signin-content__detail">
-    To help prevent spam, we request that you sign in with GitHub to continue
-  </p>
-  <a class="btn primary" href="<%= auth_path @conn, :index, "github" %>">
-    <i class="fa fa-lg fa-github"></i> Authorize
-  </a>
-  <p class="signin-content__subtext">
-    Your public profile information and activity will be used to verify you're
-    not a robot or a spammer.
-  </p>
+<div class="primary-background">
+  <%= render Org.SharedView, "nav.html", assigns %>
+  <div class="signin-content">
+    <h2 class="primary-header signin-content__header">
+      Thanks for your interest in joining!
+    </h2>
+    <p class="signin-content__detail">
+      To help prevent spam, we request that you sign in with GitHub to continue
+    </p>
+    <a class="button signin-content__auth-button" href="<%= auth_path(@conn, :index, "github") %>">
+      <i class="fa fa-lg fa-github"></i> Authorize
+    </a>
+    <p class="signin-content__detail">
+      Your public profile information and activity will be used to verify you're
+      not a robot or a spammer.
+    </p>
+  </div>
 </div>

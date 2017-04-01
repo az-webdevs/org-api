@@ -1,0 +1,37 @@
+  .primary-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3.5rem;
+}
+
+.primary-nav__home-icon {
+  color: $off-white;
+  font-size: 1.4em;
+
+  .logo {
+    font-size: 1.2em;
+  }
+}
+
+.primary-nav__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.primary-nav__link {
+  color: $primary-color-dark;
+  padding: 1em 2em;
+}
+
+.primary-background {
+  .primary-nav {
+    background: $primary-color;
+  }
+
+  .primary-nav__link {
+    color: $off-white;
+  }
+}

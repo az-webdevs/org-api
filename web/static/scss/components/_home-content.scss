@@ -1,0 +1,24 @@
+.home-content__join {
+  color: $secondary-text;
+
+  .primary-header {
+    color: $secondary-color;
+  }
+}
+
+.home-content__details {
+  font-size: 1.2em;
+
+  > span {
+    color: $primary-color-dark;
+  }
+}
+
+.home-content__details-logo {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.home-content__button {
+ font-size: 1.05em;
+}

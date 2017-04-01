@@ -1,0 +1,36 @@
+.base-form {
+  font-size: 1rem;
+  width: 100%;
+
+  .base-form__input {
+    border-bottom: 2px solid $off-white;
+
+    &:disabled, &[readonly="readonly"] {
+      color: inherit;
+      border-width: 2px;
+      border-bottom-color: inherit;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: $primary-color-light;
+  }
+}
+
+.base-form__label {
+  color: $off-white;
+  font-size: 1.3em;
+}
+
+.base-form__actions {
+  margin-top: 15px;
+}
+
+.primary-textarea {
+  outline: none;
+  padding: 1em;
+  min-height: 7em;
+  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+}

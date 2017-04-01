@@ -1,54 +1,53 @@
-<%= render Org.SharedView, "nav.html", assigns %>
-<div class="home-content">
-  <input type="radio" name="tabs" id="tab1" checked>
-  <input type="radio" name="tabs" id="tab2">
-  <input type="radio" name="tabs" id="tab3">
-  <div class="tabs">
-    <label for="tab1">Intro</label>
-    <label for="tab2">About Us</label>
-    <label for="tab3">Meetups</label>
+<div class="split-background">
+  <div class="primary-logo">
+    <span>{a</span><span>z}</span>
   </div>
-
-  <div class="tab-content-wrapper">
-    <div id="tab-content1" class="tab-content">
-      <h1 class="primary-header">Get Involved</h1>
-      <p class="tab-content__details">
-        AZ Web Devs is a Slack community created by and for local web developers
-        as a place for us to connect, communicate, and collaborate. This
-        community aims to be a great place to chat and get help for advice, for
-        those of us who attend every possible meetup and those who can't attend
-        any -- and everyone in between.
+  <%= render Org.SharedView, "nav.html", assigns %>
+  <div class="home-content">
+    <div class="home-content__about-us">
+      <h1 class="primary-header">About Us</h1>
+      <p class="home-content__details">
+        <span class="logo home-content__details-logo">{az}</span> <span>Web Devs</span>
+        is a Slack community created by and for local web developers as a place
+        for us to connect, communicate, and collaborate.
       </p>
-      <p><a class="btn primary" href="/signin">Join us on Slack now &raquo;</a></p>
-      <p class="tab-content__details--subtext">
+      <p class="home-content__details">
+        <span>Already a member?</span> Click the button below!
+      </p>
+      <p>
+        <a class="button home-content__button"
+           href="https://az-webdevs.slack.com/messages">
+          Go to our Slack page &raquo;
+        </a>
+      </p>
+    </div>
+    <div class="home-content__join">
+      <h1 class="primary-header">Want to Join?</h1>
+      <p class="home-content__details">
+        There's just a couple of steps to go through in order for us to verify that
+        you are a developer.
+      </p>
+      <p class="home-content__details">
         We look forward to seeing you there!
       </p>
-    </div>
+      <p>
+        <a class="button home-content__button"
+           href="<%= page_path(@conn, :signin) %>">
 
-    <div id="tab-content2" class="tab-content">
-      <h1 class="primary-header">About Us</h1>
-      <p class="secondary-description">We are AZ Web Devs</p>
-      <p class="tab-content__details">
-        Many local developers don't have time to attend meetups, simply can't go
-        as often as they'd like to, or live too far away from ones they would like
-        to attend. For these reasons, we created this Slack community so more
-        developers can network with each other. This community is less formal
-        than the various Meetup groups, and we don't (yet) have any regular
-        meetings. It's more just a place to gather and chat, collaborate, get help,
-        offer help, advise, network, etc. Join us and meet more devs!
+          Sign up now &raquo;
+        </a>
       </p>
-      <p><a class="btn" href="{{link}}">View details &raquo;</a></p>
     </div>
 
-    <div id="tab-content3" class="tab-content meetups">
-      <%= render Org.GroupView, "index.html", assigns %>
-    </div>
+    <a class="github-fork-ribbon right-bottom"
+       href="https://github.com/az-webdevs/azwebdevs.org"
+       title="Fork me on GitHub">
+      Fork me on GitHub
+    </a>
+
   </div>
-
-  <div class="logo home-content__logo">
-    <span>{az}</span>
-  </div>
-
-  <a class="github-fork-ribbon right-bottom" href="https://github.com/therealklanni/az-webdevs" title="Fork me on GitHub">Fork me on GitHub</a>
-
+</div>
+<div class="group-content" id="groups">
+  <h1 class="primary-header group-content__header">Meetups</h1>
+  <%= render Org.GroupView, "index.html", assigns %>
 </div>

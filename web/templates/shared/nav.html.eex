@@ -1,32 +1,28 @@
 <nav class="primary-nav">
   <a href="/" class="primary-nav__home-icon">
-    <span class="logo">{az}</span> Web Developers
+    <span class="logo">{az}</span><span> Web Developers</span>
   </a>
+  <div class="primary-nav__list">
+    <a href="/#groups" class="primary-nav__link">
+      Meetups
+    </a>
   <%= if @current_user do %>
-    <span>
-      <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn" %>
-    </span>
+    <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "button" %>
   <% else %>
-    <a class="btn primary" href="<%= page_path(@conn, :signin) %>">
+    <a class="button" href="<%= page_path(@conn, :signin) %>">
       Sign in
     </a>
   <% end %>
+  </div>
 </nav>
-
 <%
 info = get_flash(@conn, :info)
 error = get_flash(@conn, :error)
 %>
 
-<div class="flash">
 <%= if info do %>
-  <div>
-    <span class="flash--info"><%= info %></span>
-  </div>
+  <span class="flash flash--info"><%= info %></span>
 <% end %>
 <%= if error do %>
-  <div>
-    <span class="flash--error"><%= error %></span>
-  </div>
+  <span class="flash flash--error"><i class="fa fa-exclamation-triangle"></i> <%= error %></span>
 <% end %>
-</div>

@@ -1,0 +1,75 @@
+$card-content-height: 49%;
+$card-media-height: 36%;
+$card-actions-height: 15%;
+
+.card {
+  display: block;
+  background-color: $off-white;
+  border-radius: 3px;
+  width: 20em;
+  height: 25em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+  margin-bottom: 2em;
+}
+
+// Slightly larger cards for users
+.card--big {
+  width: 25em;
+  height: 31.25em;
+}
+
+.card__media {
+  position: relative;
+  height: $card-media-height;
+}
+
+.card__image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card__title {
+  position: relative;
+  height: 50%;
+  color: $primary-color-dark;
+  font-family: $alternate-font;
+  font-size: 1.4em;
+  margin: 0;
+
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.card__content {
+  color: $faded-text;
+  text-align: center;
+  padding: 0.5em 1em 1em 1em;
+  height: $card-content-height;
+}
+
+.card__description {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.card__actions {
+  display: flex;
+  flex-direction: row;
+  height: $card-actions-height;
+
+  .button, .link {
+    flex-grow: 1;
+    flex-basis: 33.33%;
+    height: 100%;
+  }
+}

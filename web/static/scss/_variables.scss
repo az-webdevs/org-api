@@ -1,17 +1,15 @@
-$off-black: #1B1B1B;
-$off-white: #DEDEDE;
-$grey: #788c9d;
-$dark-grey: #5B6B78;
+// Variables not seen here can be found in materialize/components/_variables.scss
 
-$base-color-primary: #1E90FF;
-$base-color-secondary: #59ab04;
+$off-white: color("grey", "lighten-5");
+$primary-color-light: lighten($primary-color, 40%);
 
-$dark-primary: #0C4174;
-$dark-secondary: #478804;
+$primary-text: rgba(color("grey", "darken-4"), 0.77);
+$secondary-text: color("grey", "darken-1");
+$divider-color: color("grey", "lighten-1");
 
-$error: #d63838;
-$dark-error: #c23333;
+$light-grey: color("grey", "lighten-4");
+$faded-text: rgba($primary-text, 0.54);
 
-$panel-content-width-small: 375px;
-$panel-content-width-medium: 500px;
-$panel-content-width-large: 700px;
+$success: rgb(105, 212, 119);
+$error: $error-color;
+$alternate-font: 'Source Code Pro';

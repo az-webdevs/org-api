@@ -1,27 +1,51 @@
-<%= for group <- @groups do %>
-<div>
-  <h1 class="primary-header"><%= group.title %></h1>
-  <%= if @current_user && @current_user.role == "admin" do %>
-  <h2>Added by <%= group.user.name %></h2>
-  <% end %>
-  <p class="tab-content__details"><%= group.description %></p>
-  <div>
-    <a class="btn" href="<%= group.url %>">View details &raquo;</a>
-    <%= if @current_user && @current_user.role == "admin" do %>
-    <%= link "Show", to: group_path(@conn, :show, group), class: "btn" %>
-    <%= link "Edit", to: group_path(@conn, :edit, group), class: "btn" %>
-    <div class="phoenix-button-form">
-      <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
-    </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
-
 <%= if Enum.empty?(@groups) do %>
 <h2>No groups currently listed.</h2>
 <% end %>
 
 <%= if @current_user && @current_user.role == "admin" do %>
-  <%= link "New group", to: group_path(@conn, :new), class: "btn" %>
+  <div class="group-content__new">
+    <%= link "New group", to: group_path(@conn, :new), class: "button" %>
+  </div>
 <% end %>
+
+<div class="card-list">
+  <%= for group <- @groups do %>
+  <div class="card">
+    <div class="card__media">
+      <div class="card__image" style="background-image: url(/images/az.jpg)"></div>
+    </div>
+    <div class="card__content">
+      <h6 class="card__title"><div class="center-text"><%= group.title %></div></h6>
+      <p class="card__description"><%= group.description %></p>
+    </div>
+    <div class="card__actions">
+      <a class="button button--flat" href="<%= group.url %>">View Details &raquo;</a>
+      <%= if @current_user && @current_user.role == "admin" do %>
+        <%= link "Edit", to: group_path(@conn, :edit, group), class: "button button--flat button--info" %>
+        <%= link "Delete", to: group_path(@conn, :delete, group),
+         method: :delete, data: [confirm: "Are you sure?"], class: "button button--flat button--danger" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<!--<ul class="primary-list">
+<%= for group <- @groups do %>
+  <li class="avatar primary-list-item">
+    <img src="/images/az.jpg" alt="" class="circle">
+    <span class="title primary-list-item__title"><%= group.title %></span>
+    <%= if @current_user && @current_user.role == "admin" do %>
+    <% end %>
+    <p class="primary-list-item__description"><%= group.description %></p>
+    <div class="primary-list-item__actions">
+      <a class="btn" href="<%= group.url %>">View details &raquo;</div>
+      <%= if @current_user && @current_user.role == "admin" do %>
+      <%= link "Edit", to: group_path(@conn, :edit, group), class: "btn info" %>
+      <div class="phoenix-button-form">
+        <%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn danger" %>
+      </div>
+      <% end %>
+    </div>
+  </li>
+<% end %>
+</ul>-->
