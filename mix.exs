@@ -38,7 +38,8 @@ defmodule Org.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:oauth2, "~> 0.5"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:credo, "~> 0.7", only: [:dev, :test]}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
