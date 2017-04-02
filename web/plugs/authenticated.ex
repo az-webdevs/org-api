@@ -21,7 +21,7 @@ defmodule Org.Plugs.Authenticated do
       end
     else
       conn
-        |> flash_and_redirect
+      |> flash_and_redirect
     end
   end
 
