@@ -34,7 +34,7 @@ defmodule Org.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_org_key",
-    signing_salt: "bnSQQ4EC"
+    signing_salt: "crYbTHWO"
 
   plug Org.Router
 end
