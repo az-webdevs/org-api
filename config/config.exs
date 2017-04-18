@@ -7,7 +7,7 @@ use Mix.Config
 
 # General application configuration
 config :org,
-	ecto_repos: [Org.Repo]
+  ecto_repos: [Org.Repo]
 
 # Configures the endpoint
 config :org, Org.Endpoint,
