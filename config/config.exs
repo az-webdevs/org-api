@@ -13,7 +13,7 @@ config :org,
 config :org, Org.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "dbaUFzsX9uXxHHCvaccSgGphSF+a+z9WYnY/J9qjYToo0UUgXgYkTqBpPsBllbJv"
+  secret_key_base: "dbaUFzsX9uXxHHCvaccSgGphSF+a+z9WYnY/J9qjYToo0UUgXgYkTqBpPsBllbJv",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: Org.PubSub,
            adapter: Phoenix.PubSub.PG2]
