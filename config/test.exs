@@ -10,7 +10,12 @@ config :org, Org.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
+# `ownership_timeout` allows use of `IEx.pry` for debugging tests
 config :org, Org.Repo,
-  adapter: Mongo.Ecto,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
   database: "org_test",
-  pool_size: 1
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  ownership_timeout: 10 * 60 * 1000

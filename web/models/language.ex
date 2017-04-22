@@ -11,17 +11,11 @@ defmodule Org.Language do
     field :php, :boolean
   end
 
-  @required_fields ~w()
-  @optional_fields ~w(es5 es6 es7 rails dotnet python php)
-
   @doc """
-  Creates a changeset based on the `model` and `params`.
-
-  If no params are provided, an invalid changeset is returned
-  with no validation performed.
+    Builds a changeset based on a `struct` and `params`.
   """
-  def changeset(model, params \\ :empty) do
-    model
-    |> cast(params, @required_fields, @optional_fields)
+  def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:es5, :es6, :es7, :rails, :dotnet, :python, :php])
   end
 end

@@ -22,7 +22,7 @@ defmodule Org.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       @primary_key {:id, :binary_id, autogenerate: true}
       @foreign_key_type :binary_id
@@ -35,7 +35,7 @@ defmodule Org.Web do
 
       alias Org.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import Org.Router.Helpers
       import Org.Gettext
@@ -70,7 +70,7 @@ defmodule Org.Web do
 
       alias Org.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import Org.Gettext
     end
   end
