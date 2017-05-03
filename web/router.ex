@@ -41,7 +41,7 @@ defmodule Org.Router do
   scope "/", Org.Admin do
     pipe_through [:browser, :auth_admin]
 
-    resources "/users", UserController, except: [:show, :new, :update]
+    # resources "/users", UserController, except: [:show, :new, :update]
     resources "/groups", GroupController, except: [:index, :show]
   end
 
@@ -59,6 +59,11 @@ defmodule Org.Router do
     get "/apply", PageController, :apply
     put "/apply/:id", UserController, :apply
     get "/thanks", PageController, :thanks
+  end
+
+  scope "/api", Org.Api do
+    pipe_through :api
+
     resources "/users", UserController, only: [:index, :show, :update]
   end
 

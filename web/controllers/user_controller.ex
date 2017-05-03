@@ -3,11 +3,9 @@ defmodule Org.UserController do
 
   alias Org.User
 
-  plug :scrub_params, "user" when action in [:create, :update, :apply]
-
   def index(conn, _params) do
     users = Repo.all(from u in User, where: u.role != "user")
-    render(conn, "index.html", users: users)
+    render(conn, "index.json", users: users)
   end
 
   def create(conn, %{"user" => user_params}) do

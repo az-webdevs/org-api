@@ -25,6 +25,8 @@ defmodule Org.ConnCase do
       import Ecto.Changeset
       import Ecto.Query
 
+      import Org.TestHelpers
+
       import Org.Router.Helpers
 
       # The default endpoint for testing
