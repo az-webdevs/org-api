@@ -9,7 +9,6 @@ defmodule Org.Repo.Migrations.CreateUser do
       add :login, :string
       add :company, :string
       add :location, :string
-      add :created_at, :string
       add :has_applied, :boolean, default: false, null: false
       add :role, :string
       add :comments, :string
