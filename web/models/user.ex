@@ -6,6 +6,8 @@ defmodule Org.User do
     field :bio, :string
     field :blog, :string
     field :company, :string
+    # This is the GitHub created_at date
+    field :created_at, :string
     field :email, :string
     field :followers, :integer
     field :following, :integer
@@ -33,12 +35,12 @@ defmodule Org.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:avatar, :bio, :blog, :company, :email,
+    |> cast(params, [:avatar, :bio, :blog, :company, :created_at, :email,
         :followers, :following, :hireable, :html_url, :github_id, :location,
         :login, :name, :public_gists, :public_repos, :role, :type, :has_applied,
         :comments
        ])
-    |> validate_required([:avatar, :blog, :company, :email,
+    |> validate_required([:avatar, :blog, :company, :created_at, :email,
         :followers, :following, :html_url, :github_id, :location, :login,
         :name, :public_gists, :public_repos, :role, :type, :has_applied
        ])

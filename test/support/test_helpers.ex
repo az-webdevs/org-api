@@ -1,5 +1,4 @@
 defmodule Org.TestHelpers do
-  require IEx
   alias Org.Repo
   alias Org.User
 
@@ -8,6 +7,7 @@ defmodule Org.TestHelpers do
       avatar: "String",
       blog: "My Blog",
       company: "My Company",
+      created_at: "100",
       email: "email@email.com",
       followers: 1,
       following: 1,
@@ -19,7 +19,6 @@ defmodule Org.TestHelpers do
       public_repos: 1,
       type: "user"
     }, Enum.into(attrs, %{}))
-    IEx.pry
 
     %User{}
     |> User.changeset(changes)
