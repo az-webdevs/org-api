@@ -22,10 +22,8 @@ defmodule Org.Api.UserController do
   end
 
   def show(conn, %{"id" => id}) do
-    user = User
-            |> Repo.get!(id)
-            |> Repo.preload(:groups)
-    render(conn, "show.html", user: user)
+    user = Repo.get!(User, id)
+    render(conn, "show.json", user: user)
   end
 
   def edit(conn, %{"id" => id}) do
