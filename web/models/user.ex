@@ -24,8 +24,8 @@ defmodule Org.User do
     field :has_applied, :boolean, default: false, null: false
     field :comments, :string
 
-    has_many :groups, Org.Group
-    embeds_one :languages, Org.Language
+    # has_many :groups, Org.Group
+    # embeds_one :languages, Org.Language
 
     timestamps()
   end

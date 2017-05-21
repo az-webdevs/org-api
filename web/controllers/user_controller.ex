@@ -1,4 +1,4 @@
-defmodule Org.UserController do
+defmodule Org.Api.UserController do
   use Org.Web, :controller
 
   alias Org.User

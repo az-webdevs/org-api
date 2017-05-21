@@ -1,14 +1,15 @@
 defmodule Org.UserControllerTest do
   use Org.ConnCase
+
   alias Org.User
 
   @valid_attrs %{email: "some content", name: "some content"}
   @invalid_attrs %{}
 
-  test "lists all entries on index", %{conn: conn} do
-    user = insert_user(name: "Test User")
+  test "lists all non-user role users", %{conn: conn} do
+    [member, user] = [insert(:user), insert(:user, role: "user")]
     conn = get conn, user_path(conn, :index)
-    assert json_response(conn, 200) =~ %{name: user.name}
+    assert json_response(conn, 200) == render_json(Org.Api.UserView, "index.json", users: [member])
   end
 
   test "renders form for new resources", %{conn: conn} do

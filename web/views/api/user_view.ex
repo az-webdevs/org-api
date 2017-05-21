@@ -1,4 +1,4 @@
-defmodule Org.UserView do
+defmodule Org.Api.UserView do
   use Org.Web, :view
 
   def render("index.json", %{users: users}) do
@@ -9,7 +9,9 @@ defmodule Org.UserView do
 
   def user_json(user) do
     %{
-      name: user.name
+      name: user.name,
+      email: user.email,
+      role: user.role
     }
   end
 end

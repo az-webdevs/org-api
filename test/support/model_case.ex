@@ -22,6 +22,7 @@ defmodule Org.ModelCase do
       import Ecto.Changeset
       import Ecto.Query
       import Org.ModelCase
+      import Org.Factory
     end
   end
 

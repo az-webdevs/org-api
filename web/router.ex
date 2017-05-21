@@ -49,7 +49,7 @@ defmodule Org.Router do
   scope "/", Org do
     pipe_through [:browser, :auth_member]
 
-    resources "/users", UserController, only: [:index, :show]
+    # resources "/users", UserController, only: [:index, :show]
   end
 
   # Scope for authenticated-only routes (user is logged in)
