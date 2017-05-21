@@ -28,7 +28,7 @@ defmodule Org.Plugs.Auth do
     else
       conn
       |> put_status(401)
-      |> render(Org.ErrorView, "401.json", %{})
+      |> render(Org.ErrorView, "401.json", [])
       |> halt()
     end
   end
@@ -39,7 +39,7 @@ defmodule Org.Plugs.Auth do
     else
       conn
       |> put_status(403)
-      |> render(Org.ErrorView, "403.json", %{})
+      |> render(Org.ErrorView, "403.json", [])
       |> halt()
     end
   end
@@ -50,7 +50,7 @@ defmodule Org.Plugs.Auth do
     else
       conn
       |> put_status(403)
-      |> render(Org.ErrorView, "403.json", %{})
+      |> render(Org.ErrorView, "403.json", [])
       |> halt()
     end
   end
