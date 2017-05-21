@@ -36,6 +36,7 @@ defmodule Org.Web do
 
       import Org.Router.Helpers
       import Org.Gettext
+      import Org.Plugs.Auth, only: [authenticated: 2, authenticate_self: 2]
     end
   end
 
@@ -58,6 +59,7 @@ defmodule Org.Web do
   def router do
     quote do
       use Phoenix.Router
+      import Org.Plugs.Auth, only: [authenticated: 2]
     end
   end
 

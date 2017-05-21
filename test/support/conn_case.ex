@@ -27,7 +27,6 @@ defmodule Org.ConnCase do
 
       import Org.Factory
       import Org.TestHelpers
-
       import Org.Router.Helpers
 
       # The default endpoint for testing

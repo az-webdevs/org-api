@@ -1,18 +1,18 @@
-defmodule Org.Admin.UserTest do
-  use Org.ModelCase
+# defmodule Org.Admin.UserTest do
+#   use Org.ModelCase
 
-  alias Org.User
+#   alias Org.User
 
-  @valid_attrs %{email: "some content", name: "some content"}
-  @invalid_attrs %{}
+#   @valid_attrs %{email: "some content", name: "some content"}
+#   @invalid_attrs %{}
 
-  test "changeset with valid attributes" do
-    changeset = User.changeset(%User{}, @valid_attrs)
-    assert changeset.valid?
-  end
+#   test "changeset with valid attributes" do
+#     changeset = User.changeset(%User{}, @valid_attrs)
+#     assert changeset.valid?
+#   end
 
-  test "changeset with invalid attributes" do
-    changeset = User.changeset(%User{}, @invalid_attrs)
-    refute changeset.valid?
-  end
-end
+#   test "changeset with invalid attributes" do
+#     changeset = User.changeset(%User{}, @invalid_attrs)
+#     refute changeset.valid?
+#   end
+# end

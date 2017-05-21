@@ -46,4 +46,10 @@ defmodule Org.User do
        ])
     |> unique_constraint(:github_id)
   end
+
+  def constants do
+    %{
+      roles: ["user", "member", "admin"]
+    }
+  end
 end
