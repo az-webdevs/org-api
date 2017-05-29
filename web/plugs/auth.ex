@@ -43,15 +43,4 @@ defmodule Org.Plugs.Auth do
       |> halt()
     end
   end
-
-  def authenticate_self(conn, _opts) do
-    if conn.assigns.current_user.id == conn.params["id"] do
-      conn
-    else
-      conn
-      |> put_status(403)
-      |> render(Org.ErrorView, "403.json", [])
-      |> halt()
-    end
-  end
 end

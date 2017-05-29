@@ -36,7 +36,7 @@ defmodule Org.Web do
 
       import Org.Router.Helpers
       import Org.Gettext
-      import Org.Plugs.Auth, only: [authenticated: 2, authenticate_self: 2]
+      import Org.Plugs.Auth, only: [authenticated: 2, authenticate_for_roles: 2]
     end
   end
 

@@ -35,6 +35,12 @@ defmodule Org.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
+    |> cast(params, [:bio])
+    |> validate_required([:bio])
+  end
+
+  def registration_changeset(struct, params \\ %{}) do
+    struct
     |> cast(params, [:avatar, :bio, :blog, :company, :created_at, :email,
         :followers, :following, :hireable, :html_url, :github_id, :location,
         :login, :name, :public_gists, :public_repos, :role, :type, :has_applied,
@@ -48,8 +54,6 @@ defmodule Org.User do
   end
 
   def constants do
-    %{
-      roles: ["user", "member", "admin"]
-    }
+    %{roles: ~w(user member admin)}
   end
 end

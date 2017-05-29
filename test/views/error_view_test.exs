@@ -17,12 +17,11 @@ defmodule Org.ErrorViewTest do
   end
 
   test "render 401.json" do
-    assert ErrorView.render("401.json", []) == %{error: "Please sign in"}
+    assert ErrorView.render("401.json", []) == %{message: "Unauthorized"}
   end
 
   test "render 403.json" do
-    assert ErrorView.render("403.json", []) == 
-      %{error: "You do not have the proper permissions to do that"}
+    assert ErrorView.render("403.json", []) == %{message: "Forbidden"}
   end
 
   test "render any other" do

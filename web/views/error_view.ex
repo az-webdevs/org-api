@@ -10,11 +10,23 @@ defmodule Org.ErrorView do
   end
 
   def render("401.json", _assigns) do
-    %{error: "Please sign in"}
+    %{message: "Unauthorized"}
   end
 
   def render("403.json", _assigns) do
-    %{error: "You do not have the proper permissions to do that"}
+    %{message: "Forbidden"}
+  end
+
+  def render("404.json", _assigns) do
+    %{message: "Not Found"}
+  end
+
+  def render("409.json", _assigns) do
+    %{message: "Conflict"}
+  end
+
+  def render("500.json", _assigns) do
+    %{message: "Internal Server Error"}
   end
 
   # In case no render clause matches or no

@@ -73,7 +73,8 @@ defmodule Org.AuthController do
       nil  -> %User{} # User not found, we build one
       user -> user    # User exists, let's use it
     end
-    |> User.changeset(user)
+    user
+    |> User.changeset
     |> Repo.insert_or_update!
   end
 end

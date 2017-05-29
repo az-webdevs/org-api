@@ -2,18 +2,19 @@ defmodule Org.Api.UserView do
   use Org.Web, :view
 
   def render("index.json", %{users: users}) do
-    %{users: Enum.map(users, &(user_json(&1)))}
+    %{data: render_many(users, Org.Api.UserView, "user.json")}
   end
 
   def render("show.json", %{user: user}) do
-    %{user: user_json(user)}
+    %{data: render_one(user, Org.Api.UserView, "user.json")}
   end
 
-  def user_json(user) do
+  def render("user.json", %{user: user}) do
     %{
       name: user.name,
       email: user.email,
-      role: user.role
+      role: user.role,
+      bio: user.bio
     }
   end
 end

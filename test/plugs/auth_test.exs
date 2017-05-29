@@ -69,24 +69,4 @@ defmodule Org.Plugs.AuthTest do
 
     assert conn.halted
   end
-
-  test "authenticate_self continues when the current_user is the same as the route id", %{conn: conn} do
-    conn =
-      conn
-      |> get("/api/users", %{id: 1})
-      |> assign(:current_user, %User{id: 1})
-      |> Auth.authenticate_self([])
-
-    refute conn.halted
-  end
-
-  test "authenticate_self halts when the current_user is not the same as the route id", %{conn: conn} do
-    conn =
-      conn
-      |> get("/api/users", %{id: 1234})
-      |> assign(:current_user, %User{id: 1})
-      |> Auth.authenticate_self([])
-
-    assert conn.halted
-  end
 end

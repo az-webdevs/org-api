@@ -25,14 +25,6 @@ defmodule Org.Router do
     delete "/logout", AuthController, :delete
   end
 
-  # Scope for admin-only routes
-  # scope "/api", Org.Api.Admin do
-  #   pipe_through [:api]
-
-  #   resources "/users", UserController, except: [:show, :new, :update]
-  #   resources "/groups", GroupController, except: [:index, :show]
-  # end
-
   scope "/api", Org.Api do
     pipe_through [:api, :authenticated]
 
