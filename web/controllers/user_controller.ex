@@ -32,7 +32,7 @@ defmodule Org.Api.UserController do
     |> Repo.get!(id)
     |> authorize!(:update, current_user(conn))
     |> User.changeset(user_params)
-    |> update_user(conn, &(render(conn, "show.json", user: &1)))
+    |> update_user(conn)
   end
 
   def apply(conn, %{"id" => id, "user" => user_params}) do
@@ -51,10 +51,10 @@ defmodule Org.Api.UserController do
     end
   end
 
-  defp update_user(changeset, conn, func) do
+  defp update_user(changeset, conn) do
     case Repo.update(changeset) do
       {:ok, user} ->
-        func.(user)
+        render(conn, "show.json", user: user)
       {:error, %{errors: errors}} ->
         conn
         |> put_status(409)
