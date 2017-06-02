@@ -14,7 +14,6 @@ config :org, Org.Endpoint,
 # Configure your database
 config :org, Org.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATABASE_USERNAME"),
-  password: System.get_env("DATABASE_PASSWORD"),
+  url: System.get_env("DATABASE_URL"),
   database: "org_prod",
   pool_size: 20
