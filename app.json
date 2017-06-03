@@ -1,0 +1,25 @@
+{
+  "name": "azwebdevs.org",
+  "description": "",
+  "scripts": {},
+  "env": {
+    "POOL_SIZE": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "formation": {},
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/HashNuke/heroku-buildpack-elixir"
+    },
+    {
+      "url": "https://github.com/gjaldon/phoenix-static-buildpack"
+    }
+  ]
+}
