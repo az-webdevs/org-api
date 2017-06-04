@@ -25,6 +25,8 @@ defmodule Org.ConnCase do
       import Ecto.Changeset
       import Ecto.Query
 
+      import Org.Factory
+      import Org.TestHelpers
       import Org.Router.Helpers
 
       # The default endpoint for testing
@@ -36,7 +38,7 @@ defmodule Org.ConnCase do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Org.Repo)
 
     unless tags[:async] do
-     Ecto.Adapters.SQL.Sandbox.mode(Org.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Org.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

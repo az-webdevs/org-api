@@ -6,6 +6,7 @@ defmodule Org.User do
     field :bio, :string
     field :blog, :string
     field :company, :string
+    # This is the GitHub created_at date
     field :created_at, :string
     field :email, :string
     field :followers, :integer
@@ -20,11 +21,11 @@ defmodule Org.User do
     field :public_repos, :integer
     field :role, :string, default: "user"
     field :type, :string
-    field :has_applied, :boolean, default: false
+    field :has_applied, :boolean, default: false, null: false
     field :comments, :string
 
-    has_many :groups, Org.Group
-    embeds_one :languages, Org.Language
+    # has_many :groups, Org.Group
+    # embeds_one :languages, Org.Language
 
     timestamps()
   end
@@ -33,6 +34,12 @@ defmodule Org.User do
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:bio])
+    |> validate_required([:bio])
+  end
+
+  def registration_changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:avatar, :bio, :blog, :company, :created_at, :email,
         :followers, :following, :hireable, :html_url, :github_id, :location,
@@ -44,5 +51,9 @@ defmodule Org.User do
         :name, :public_gists, :public_repos, :role, :type, :has_applied
        ])
     |> unique_constraint(:github_id)
+  end
+
+  def constants do
+    %{roles: ~w(user member admin)}
   end
 end

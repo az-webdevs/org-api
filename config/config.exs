@@ -14,7 +14,7 @@ config :org, Org.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "dbaUFzsX9uXxHHCvaccSgGphSF+a+z9WYnY/J9qjYToo0UUgXgYkTqBpPsBllbJv",
-  render_errors: [accepts: ~w(html json)],
+  render_errors: [accepts: ~w(json)],
   pubsub: [name: Org.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -26,11 +26,6 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: false,
-  binary_id: true
 
 config :org, GitHub,
   client_id: System.get_env("GITHUB_CLIENT_ID"),

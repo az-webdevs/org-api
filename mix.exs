@@ -39,6 +39,7 @@ defmodule Org.Mixfile do
      {:gettext, "~> 0.11"},
      {:oauth2, "~> 0.5"},
      {:cowboy, "~> 1.0"},
+     {:ex_machina, "~> 2.0", only: [:test]},
      {:credo, "~> 0.7", only: [:dev, :test]}]
   end
 

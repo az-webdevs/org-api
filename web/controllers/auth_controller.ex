@@ -13,7 +13,6 @@ defmodule Org.AuthController do
 
   def delete(conn, _params) do
     conn
-    |> put_flash(:info, "You have been logged out!")
     |> configure_session(drop: true)
     |> redirect(to: "/")
   end
@@ -38,10 +37,10 @@ defmodule Org.AuthController do
     |> redirect(to: "/")
   end
 
-  defp authorize_url!("github"),   do: GitHub.authorize_url!
+  defp authorize_url!("github"), do: GitHub.authorize_url!
   defp authorize_url!(_), do: raise "No matching provider available"
 
-  defp get_token!("github", code),   do: GitHub.get_token!(code: code)
+  defp get_token!("github", code), do: GitHub.get_token!(code: code)
   defp get_token!(_, _), do: raise "No matching provider available"
 
   defp get_user!("github", token) do
@@ -69,11 +68,13 @@ defmodule Org.AuthController do
   end
 
   defp find_or_create_user(user) do
-    case Repo.get_by(User, github_id: user[:github_id]) do
+    user = case Repo.get_by(User, github_id: user[:github_id]) do
       nil  -> %User{} # User not found, we build one
       user -> user    # User exists, let's use it
     end
-    |> User.changeset(user)
+
+    user
+    |> User.changeset
     |> Repo.insert_or_update!
   end
 end

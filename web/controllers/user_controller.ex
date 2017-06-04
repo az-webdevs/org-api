@@ -1,53 +1,38 @@
-defmodule Org.UserController do
+defmodule Org.Api.UserController do
   use Org.Web, :controller
+
+  import Org.User.Permissions
+  import Org.Controller.Helpers
 
   alias Org.User
 
-  plug :scrub_params, "user" when action in [:create, :update, :apply]
+  plug :authenticate_for_roles, ~w(admin member) when action in [:index, :show, :update]
 
   def index(conn, _params) do
-    users = Repo.all(from u in User, where: u.role != "user")
-    render(conn, "index.html", users: users)
-  end
+    users =
+      User
+      |> limit_for(current_user(conn).role)
+      |> Repo.all
 
-  def create(conn, %{"user" => user_params}) do
-    changeset = User.changeset(%User{}, user_params)
-
-    case Repo.insert(changeset) do
-      {:ok, _user} ->
-        conn
-        |> put_flash(:info, "User created successfully.")
-        |> redirect(to: user_path(conn, :index))
-      {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
+    render(conn, "index.json", users: users)
   end
 
   def show(conn, %{"id" => id}) do
-    user = User
-            |> Repo.get!(id)
-            |> Repo.preload(:groups)
-    render(conn, "show.html", user: user)
-  end
+    user =
+      User
+      |> limit_for(current_user(conn).role)
+      |> Repo.get!(id)
 
-  def edit(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
-    changeset = User.changeset(user)
-    render(conn, "edit.html", user: user, changeset: changeset)
+    render(conn, "show.json", user: user)
   end
 
   def update(conn, %{"id" => id, "user" => user_params}) do
-    user = Repo.get!(User, id)
-    changeset = User.changeset(user, user_params)
-
-    case Repo.update(changeset) do
-      {:ok, user} ->
-        conn
-        |> put_flash(:info, "User updated successfully.")
-        |> redirect(to: user_path(conn, :show, user))
-      {:error, changeset} ->
-        render(conn, "edit.html", user: user, changeset: changeset)
-    end
+    User
+    |> limit_for(current_user(conn).role)
+    |> Repo.get!(id)
+    |> authorize!(:update, current_user(conn))
+    |> User.changeset(user_params)
+    |> update_user(conn)
   end
 
   def apply(conn, %{"id" => id, "user" => user_params}) do
@@ -66,13 +51,14 @@ defmodule Org.UserController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
-
-    Repo.delete!(user)
-
-    conn
-    |> put_flash(:info, "User deleted successfully.")
-    |> redirect(to: user_path(conn, :index))
+  defp update_user(changeset, conn) do
+    case Repo.update(changeset) do
+      {:ok, user} ->
+        render(conn, "show.json", user: user)
+      {:error, %{errors: errors}} ->
+        conn
+        |> put_status(409)
+        |> render(Org.ErrorView, "409.json", errors: errors)
+    end
   end
 end

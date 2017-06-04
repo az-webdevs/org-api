@@ -23,9 +23,6 @@ defmodule Org.Web do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-
-      @primary_key {:id, :binary_id, autogenerate: true}
-      @foreign_key_type :binary_id
     end
   end
 
@@ -39,6 +36,7 @@ defmodule Org.Web do
 
       import Org.Router.Helpers
       import Org.Gettext
+      import Org.Plugs.Auth, only: [authenticated: 2, authenticate_for_roles: 2]
     end
   end
 
@@ -61,6 +59,7 @@ defmodule Org.Web do
   def router do
     quote do
       use Phoenix.Router
+      import Org.Plugs.Auth, only: [authenticated: 2]
     end
   end
 
